@@ -17,4 +17,5 @@ class Map : ObservableObject {
         self.name = name
         self.metric = metric
     }
+    //
 }
