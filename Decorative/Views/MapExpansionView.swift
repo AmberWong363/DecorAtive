@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct MapExpansionView: View {
+    @State var zoom = 10
+    @State var isEditing : Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                Spacer()
+                MapView(zoom: $zoom)
+                    .border(Color.accent, width: 8)
+                Slider(value: .convert(from: $zoom), in: 0...100, step: 1)
+                    .padding()
+            }
+        }
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct DecorativeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapExpansionView()
         }
     }
 }

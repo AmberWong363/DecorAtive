@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A393455C29B10FDF004D66D4 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455B29B10FDF004D66D4 /* TileView.swift */; };
+		A393456029B110C2004D66D4 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455F29B110C2004D66D4 /* Tile.swift */; };
+		A393456329B26E65004D66D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393456229B26E65004D66D4 /* Constants.swift */; };
 		A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E8C77929AD2FCC00BFDF8E /* DecorativeApp.swift */; };
 		A3E8C77C29AD2FCC00BFDF8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E8C77B29AD2FCC00BFDF8E /* ContentView.swift */; };
 		A3E8C77E29AD2FCF00BFDF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E8C77D29AD2FCF00BFDF8E /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A393455B29B10FDF004D66D4 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		A393455F29B110C2004D66D4 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		A393456229B26E65004D66D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3E8C77629AD2FCC00BFDF8E /* Decorative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decorative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E8C77929AD2FCC00BFDF8E /* DecorativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorativeApp.swift; sourceTree = "<group>"; };
 		A3E8C77B29AD2FCC00BFDF8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			children = (
 				A3E8C7A829AE6F1600BFDF8E /* MapView.swift */,
 				A3E8C7AA29AE6FB600BFDF8E /* MapExpansionView.swift */,
+				A393455B29B10FDF004D66D4 /* TileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 				A3E8C7AE29AE87AA00BFDF8E /* File.swift */,
 				A3E8C7AC29AE87A900BFDF8E /* Folder.swift */,
 				A3E8C7A629AE6EA500BFDF8E /* Map.swift */,
+				A393455F29B110C2004D66D4 /* Tile.swift */,
+				A393456229B26E65004D66D4 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,9 +274,12 @@
 			files = (
 				A3E8C77C29AD2FCC00BFDF8E /* ContentView.swift in Sources */,
 				A3E8C7A929AE6F1600BFDF8E /* MapView.swift in Sources */,
+				A393455C29B10FDF004D66D4 /* TileView.swift in Sources */,
 				A3E8C7A729AE6EA500BFDF8E /* Map.swift in Sources */,
 				A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */,
+				A393456329B26E65004D66D4 /* Constants.swift in Sources */,
 				A3E8C7B129AE87AA00BFDF8E /* File.swift in Sources */,
+				A393456029B110C2004D66D4 /* Tile.swift in Sources */,
 				A3E8C7AB29AE6FB600BFDF8E /* MapExpansionView.swift in Sources */,
 				A3E8C7AF29AE87AA00BFDF8E /* Folder.swift in Sources */,
 			);
