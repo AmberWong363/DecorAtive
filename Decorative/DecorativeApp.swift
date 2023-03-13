@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct DecorativeApp: App {
+    @StateObject var map : Map = Map()
+    @StateObject var user : User = User()
+    
     var body: some Scene {
         WindowGroup {
             MapExpansionView()
+                .environmentObject(map)
+                .environmentObject(user)
         }
     }
 }

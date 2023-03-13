@@ -9,9 +9,10 @@ import Foundation
 
 class Tile : ObservableObject, Identifiable {
     @Published var restricted : Bool
+    @Published var selected : Bool
+    @Published var createSelect : Bool
     @Published var inner : [[Tile]]?
     @Published var value : Double
-    @Published var thickness : Int
     let id = UUID()
     
     init(restricted : Bool = false, inner : [[Tile]]? =
@@ -51,11 +52,12 @@ class Tile : ObservableObject, Identifiable {
                [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
                 [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
               value: 1)]],
-         value : Double = 3, thickness : Int = 5
+         value : Double = 3, selected : Bool = false, createSelect : Bool = false
     ) {
         self.restricted = restricted
         self.inner = inner
         self.value = value
-        self.thickness = thickness
+        self.selected = selected
+        self.createSelect = createSelect
     }
 }

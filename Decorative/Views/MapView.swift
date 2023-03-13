@@ -10,7 +10,8 @@ import SwiftUI
 struct MapView: View {
     
     @Binding var zoom : Int
-    @StateObject var map : Map = Map()
+    @State var currentTileIndices : (Int, Int)? = nil
+    @EnvironmentObject var map : Map
     
     var body: some View {
         ZStack {
@@ -20,7 +21,8 @@ struct MapView: View {
                         ForEach(map.array.indices, id: \.self) { index in
                             HStack(spacing: 0) {
                                 ForEach(map.array[index].indices, id: \.self) { i in
-                                    TileView(tile: $map.array[index][i], zoom: $zoom)
+                                    TileView(indices: (index, i), tile: $map.array[index][i], zoom: $zoom)
+                                        
                                 }
                                 
                             }
