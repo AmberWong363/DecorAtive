@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 enum ViewState {
-    case authenticate, signup, login, individual, forgotPassword, settings
+    case authenticate, signup, login, forgotPassword, settings
 }
 
 struct MenuView: View {
@@ -32,9 +32,9 @@ struct MenuView: View {
         else if viewState == .signup && !userInfo.loggedIn  {
             SignupView(viewState: $viewState)
         }
-        else if viewState == .forgotPassword && !userInfo.loggedIn  {
-            ForgotPassword(viewState: $viewState)
-        }
+//        else if viewState == .forgotPassword && !userInfo.loggedIn  {
+//            ForgotPassword(viewState: $viewState)
+//        }
         else if viewState == .settings && userInfo.loggedIn {
             SettingsView(viewState: $viewState)
         }
@@ -61,7 +61,7 @@ struct MenuView: View {
                             Text("Home")
                         }
                         
-                SettingsView() .tabItem {
+                        SettingsView( viewState: $viewState) .tabItem {
                     Image(systemName: "gearshape")
                     Text("Settings")
                 }

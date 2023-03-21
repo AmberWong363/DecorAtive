@@ -19,7 +19,7 @@ struct LoginView: View {
             Rectangle().edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
-                Image("poke logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
+                Image("").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
                 Spacer()
                     
                 TextField("Username or Email Address:" , text: $userInfo.username).padding(.all)
@@ -30,7 +30,7 @@ struct LoginView: View {
                     Auth.auth().signIn(withEmail: userInfo.username, password: userInfo.password) { user, error in
                         if let _ = user{
                       print("success")
-                        viewState = .individual
+                        
                  } else{
                            print(error?.localizedDescription)
                     }

@@ -23,7 +23,7 @@
 		C0B49B8829C794C7000D245F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B49B8729C794C7000D245F /* LoginView.swift */; };
 		C0B49B8A29C794DC000D245F /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B49B8929C794DC000D245F /* SignupView.swift */; };
 		C0B49B8C29C7955F000D245F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B49B8B29C7955F000D245F /* UserInfo.swift */; };
-		C0B49B8E29C79994000D245F /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B49B8D29C79994000D245F /* GoogleService-Info (1).plist */; };
+		C0B49B8E29C79994000D245F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B49B8D29C79994000D245F /* GoogleService-Info.plist */; };
 		C0BE97FB29B6741100871450 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FA29B6741100871450 /* SettingsView.swift */; };
 		C0BE97FD29B8FA4D00871450 /* InsideFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FC29B8FA4D00871450 /* InsideFolderView.swift */; };
 		C0BE97FF29B8FB1500871450 /* FolderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FE29B8FB1500871450 /* FolderList.swift */; };
@@ -70,7 +70,7 @@
 		C0B49B8729C794C7000D245F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0B49B8929C794DC000D245F /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		C0B49B8B29C7955F000D245F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		C0B49B8D29C79994000D245F /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		C0B49B8D29C79994000D245F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0BE97FA29B6741100871450 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C0BE97FC29B8FA4D00871450 /* InsideFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderView.swift; sourceTree = "<group>"; };
 		C0BE97FE29B8FB1500871450 /* FolderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderList.swift; sourceTree = "<group>"; };
@@ -110,7 +110,6 @@
 				E29F02A6A3FE59646B6D3AAE /* Pods-Decorative.debug.xcconfig */,
 				0EDE64463E392BCB5BD2A286 /* Pods-Decorative.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,7 +151,7 @@
 				A3E8C77B29AD2FCC00BFDF8E /* MenuView.swift */,
 				C0BE97FA29B6741100871450 /* SettingsView.swift */,
 				A3E8C77D29AD2FCF00BFDF8E /* Assets.xcassets */,
-				C0B49B8D29C79994000D245F /* GoogleService-Info (1).plist */,
+				C0B49B8D29C79994000D245F /* GoogleService-Info.plist */,
 				A3E8C77F29AD2FCF00BFDF8E /* Preview Content */,
 			);
 			path = Decorative;
@@ -309,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E8C78129AD2FCF00BFDF8E /* Preview Assets.xcassets in Resources */,
-				C0B49B8E29C79994000D245F /* GoogleService-Info (1).plist in Resources */,
+				C0B49B8E29C79994000D245F /* GoogleService-Info.plist in Resources */,
 				A3E8C77E29AD2FCF00BFDF8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
