@@ -15,7 +15,7 @@ struct SignupView: View {
  
     var body: some View {
         ZStack {
-            Rectangle().edgesIgnoringSafeArea(.all)
+            Rectangle().edgesIgnoringSafeArea(.all).foregroundColor(.blue)
             VStack {
                 Spacer()
                 Image("poke logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)

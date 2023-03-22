@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import struct Kingfisher.KFImage
 import FirebaseAuth
 
 enum ViewState {
