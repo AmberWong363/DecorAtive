@@ -15,49 +15,28 @@ class Tile : ObservableObject, Identifiable {
     @Published var value : Double
     let id = UUID()
     
-    init(restricted : Bool = false, inner : [[Tile]]? =
-    [[Tile(inner:
-            [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-             [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-           value: 1),
-      Tile(inner:
-              [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-               [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-             value: 1),
-      Tile(inner:
-              [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-               [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-             value: 1)],
-     [Tile(inner:
-                [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-                 [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-               value: 1),
-          Tile(inner:
-                  [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-                   [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-                 value: 1),
-          Tile(inner:
-                  [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-                   [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-                 value: 1)],
-     [Tile(inner:
-             [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-              [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-            value: 1),
-       Tile(inner:
-               [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-                [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-              value: 1),
-       Tile(inner:
-               [[Tile(inner: nil, value: 0.5), Tile(inner: nil, value: 0.5)],
-                [Tile(inner: nil, value: 0.5),  Tile(inner: nil, value: 0.5)]],
-              value: 1)]],
-         value : Double = 3, selected : Bool = false, createSelect : Bool = false
+    init(restricted : Bool = false,
+         value : Double = 3, selected : Bool = false, createSelect : Bool = false, inner : [[Tile]]? =
+         [
+             [
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil)
+             ],
+             [
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil)
+             ],
+             [
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil),
+                 Tile(value: 1, inner: nil)]]
     ) {
         self.restricted = restricted
-        self.inner = inner
         self.value = value
         self.selected = selected
         self.createSelect = createSelect
+        self.inner = inner
     }
 }

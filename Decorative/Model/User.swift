@@ -9,9 +9,9 @@ import Foundation
 
 class User : ObservableObject {
     @Published var selectedTile : (Int, Int)?
-    @Published var selectedSpecialTile : (Int, Int, Int, Int)?
+    @Published var selectedSpecialTile : (Int, Int)?
     
-    init(selectedTile : (Int, Int)? = nil, selectedSpecialTile : (Int, Int, Int, Int)? = nil) {
+    init(selectedTile : (Int, Int)? = nil, selectedSpecialTile : (Int, Int)? = nil) {
         self.selectedTile = selectedTile
         self.selectedSpecialTile = selectedSpecialTile
     }

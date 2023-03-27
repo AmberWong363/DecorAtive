@@ -17,9 +17,9 @@ struct MapView: View {
         ZStack {
             ScrollView {
                 ScrollView(.horizontal) {
-                    VStack(spacing: 0) {
+                    HStack(spacing: 0) {
                         ForEach(map.array.indices, id: \.self) { index in
-                            HStack(spacing: 0) {
+                            VStack(spacing: 0) {
                                 ForEach(map.array[index].indices, id: \.self) { i in
                                     TileView(indices: (index, i), tile: $map.array[index][i], zoom: $zoom)
                                         
