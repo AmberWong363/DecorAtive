@@ -20,13 +20,15 @@ struct SignupView: View {
                 Spacer()
                 Image("poke logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
                 Spacer()
-                    
-                TextField("Username or Email Address:" , text: $userInfo.username).padding(.all)
+                TextField("Username" , text: $userInfo.username).padding(.all)
+               
+                
+                TextField("Email Address" , text: $userInfo.userEmail).padding(.all).disableAutocorrection(true)
                 
                 SecureField("Password" , text: $userInfo.password).padding(.all)
                 
                 Button {
-                    Auth.auth().createUser(withEmail: userInfo.username, password: userInfo.password) { user, error in
+                    Auth.auth().createUser(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
                 if let _ = user {
                 print("success")
                     viewState = .login

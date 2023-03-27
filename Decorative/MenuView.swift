@@ -51,7 +51,7 @@ struct MenuView: View {
 //                    .frame(width: geometry.size.width * 0.25, height: geometry.size.height)
 //                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("AccentColor")/*@END_MENU_TOKEN@*/)
 //                }
-        
+          
          
                     
                     TabView {

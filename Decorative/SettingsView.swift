@@ -8,51 +8,107 @@
 import SwiftUI
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     @State var showSheet: Bool = false
+   
+    @State var editMode = false
     
     var body: some View {
+        
+
+        NavigationView {
+       
+            
         VStack {
-            Spacer()
-            Text(userInfo.firstName)
-            Text(userInfo.lastName)
-            Text(userInfo.address)
-            Spacer()
             
+            Spacer()
             Button {
                 showSheet.toggle()
             } label: {
-                Text("Change first name").frame(width: 300, height: 50, alignment: .center).cornerRadius(20).background(Color.accentColor)
+            Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:150, height: 150, alignment: .center).clipShape(Circle())
             }
-        Button {
-            showSheet.toggle()
-        } label: {
-            Text("Change last name").frame(width: 300, height: 50, alignment: .center).cornerRadius(20).background(Color.accentColor)
-        }.padding()
+          
+          
+                if editMode {
+                    TextField("Username", text: $userInfo.username).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                        .autocapitalization(.words)
+                        .disableAutocorrection(true)
+                    TextField("Email", text: $userInfo.userEmail).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                           .autocapitalization(.words)
+                           .disableAutocorrection(true)
+                    
+                       } else {
+                           Text(userInfo.username).font(.system(size: 20))
+                           Text(userInfo.userEmail).font(.system(size: 20))
+                       }
             
-            Button {
-                showSheet.toggle()
-            } label: {
-                Text("Change address").frame(width: 300, height: 50, alignment: .center).cornerRadius(20).background(Color.accentColor)
-            }.padding()
-        }.sheet(isPresented: $showSheet) {
+            
+           
+            
+           
+            Spacer()
+         
+               
+    
+            
+            
+            
+       
+        }.sheet(isPresented: $showSheet)
+        
+            
+            {
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
            
-            let database = Database.database().reference().child("users/\(uid)")
+            
+                
+            let storage = Storage.storage().reference().child("users/\(uid)")
            
-           
-            database.setValue(userInfo.dictionary)
+                guard let imagedata = userInfo.image.jpegData(compressionQuality: 0.5) else { return }
+                
+                storage.putData(imagedata) { meta, error in
+                    
+                }
+
             
         } content: {
-           
+            ImagePicker(selectedImage: self.$userInfo.image)
         }
-
-    }
+        .navigationTitle(Text("Settings")) .navigationBarTitleDisplayMode(.inline).toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+//                EditButton()
+                Button(action: {
+                           self.editMode.toggle()
+                       }) {
+                           Text(editMode ? "Done" : "Edit").font(.system(size: 20)).fontWeight(.light)
+                               .foregroundColor(Color.accentColor)
+                       }
+                   
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    try! Auth.auth().signOut()
+                    viewState = .authenticate
+                    userInfo.loggedIn = false
+                } label: {
+                    Text("Log Out")
+                }
+                
+              }
+            
+            
+            }
+        }
+        }
+    
 }
+
+
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
