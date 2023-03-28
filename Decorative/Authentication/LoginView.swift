@@ -12,6 +12,8 @@ import FirebaseAuth
 struct LoginView: View {
     @Binding var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
+    @State private var isPresented = false
+    
    
     
     var body: some View {
@@ -32,14 +34,27 @@ struct LoginView: View {
                       print("success")
                         
                  } else{
-                           print(error?.localizedDescription)
+                    isPresented = true
+                    
                     }
 
                                             }
                     
                 } label: {
                     Text("Login").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
-                }.padding(.all)
+                }.padding(.all).alert("Incorrect Password", isPresented: $isPresented) {
+                    Button("Try Again", role: .cancel) {
+                    }
+                    
+                        
+                    Button {   self.viewState = .forgotPassword
+                    } label: {
+                        Text("Forgot Password")
+                    }
+                        
+                    
+                }
+            }
                 
                 Button {
                     self.viewState = .forgotPassword
@@ -55,7 +70,13 @@ struct LoginView: View {
             }
         }
     }
-}
+
+
+
+
+               
+            
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

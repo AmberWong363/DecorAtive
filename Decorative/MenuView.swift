@@ -33,9 +33,9 @@ struct MenuView: View {
         else if viewState == .signup && !userInfo.loggedIn  {
             SignupView(viewState: $viewState)
         }
-//        else if viewState == .forgotPassword && !userInfo.loggedIn  {
-//            ForgotPassword(viewState: $viewState)
-//        }
+        else if viewState == .forgotPassword && !userInfo.loggedIn  {
+            ForgotPassword(viewState: $viewState)
+        }
         else if viewState == .settings && userInfo.loggedIn {
             SettingsView(viewState: $viewState)
         }

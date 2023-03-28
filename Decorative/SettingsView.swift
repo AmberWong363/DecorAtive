@@ -16,6 +16,8 @@ struct SettingsView: View {
     @State var showSheet: Bool = false
    
     @State var editMode = false
+    @ObservedObject var login = Login()
+
     
     var body: some View {
         
@@ -31,7 +33,8 @@ struct SettingsView: View {
             } label: {
             Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:150, height: 150, alignment: .center).clipShape(Circle())
             }
-          
+          Spacer()
+            Spacer()
           
                 if editMode {
                     TextField("Username", text: $userInfo.username).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
@@ -40,15 +43,19 @@ struct SettingsView: View {
                     TextField("Email", text: $userInfo.userEmail).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
                            .autocapitalization(.words)
                            .disableAutocorrection(true)
+                    SecureField("Password", text: $userInfo.password).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                           .autocapitalization(.words)
+                           .disableAutocorrection(true)
                     
                        } else {
                            Text(userInfo.username).font(.system(size: 20))
                            Text(userInfo.userEmail).font(.system(size: 20))
+                           Text("********").font(.system(size: 20))
                        }
-            
             
            
             
+               
            
             Spacer()
          
@@ -60,7 +67,6 @@ struct SettingsView: View {
        
         }.sheet(isPresented: $showSheet)
         
-            
             {
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -74,6 +80,9 @@ struct SettingsView: View {
                 storage.putData(imagedata) { meta, error in
                     
                 }
+                
+                
+                login.updatePassword(password:  userInfo.password)
 
             
         } content: {
