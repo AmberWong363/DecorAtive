@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2040907829CCD17F008F3520 /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040907729CCD17F008F3520 /* FileView.swift */; };
 		A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E8C77929AD2FCC00BFDF8E /* DecorativeApp.swift */; };
 		A3E8C77C29AD2FCC00BFDF8E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E8C77B29AD2FCC00BFDF8E /* MenuView.swift */; };
 		A3E8C77E29AD2FCF00BFDF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E8C77D29AD2FCF00BFDF8E /* Assets.xcassets */; };
@@ -25,7 +26,6 @@
 		C0B49B8A29C794DC000D245F /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B49B8929C794DC000D245F /* SignupView.swift */; };
 		C0B49B8C29C7955F000D245F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B49B8B29C7955F000D245F /* UserInfo.swift */; };
 		C0BE97FB29B6741100871450 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FA29B6741100871450 /* SettingsView.swift */; };
-		C0BE97FD29B8FA4D00871450 /* InsideFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FC29B8FA4D00871450 /* InsideFolderView.swift */; };
 		C0BE97FF29B8FB1500871450 /* FolderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE97FE29B8FB1500871450 /* FolderList.swift */; };
 		C0BE980129B8FD7C00871450 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE980029B8FD7C00871450 /* FolderView.swift */; };
 		C3A24AB97B0E9D8EF5D2A6A1 /* Pods_Decorative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1922E8F80A7BBF1EDCCC89A4 /* Pods_Decorative.framework */; };
@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0EDE64463E392BCB5BD2A286 /* Pods-Decorative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decorative.release.xcconfig"; path = "Target Support Files/Pods-Decorative/Pods-Decorative.release.xcconfig"; sourceTree = "<group>"; };
 		1922E8F80A7BBF1EDCCC89A4 /* Pods_Decorative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decorative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2040907729CCD17F008F3520 /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
 		A3E8C77629AD2FCC00BFDF8E /* Decorative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decorative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E8C77929AD2FCC00BFDF8E /* DecorativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorativeApp.swift; sourceTree = "<group>"; };
 		A3E8C77B29AD2FCC00BFDF8E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		C0B49B8929C794DC000D245F /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		C0B49B8B29C7955F000D245F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		C0BE97FA29B6741100871450 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		C0BE97FC29B8FA4D00871450 /* InsideFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFolderView.swift; sourceTree = "<group>"; };
 		C0BE97FE29B8FB1500871450 /* FolderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderList.swift; sourceTree = "<group>"; };
 		C0BE980029B8FD7C00871450 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		E29F02A6A3FE59646B6D3AAE /* Pods-Decorative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decorative.debug.xcconfig"; path = "Target Support Files/Pods-Decorative/Pods-Decorative.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,9 +170,9 @@
 			children = (
 				A3E8C7A829AE6F1600BFDF8E /* MapView.swift */,
 				A3E8C7AA29AE6FB600BFDF8E /* MapExpansionView.swift */,
-				C0BE97FC29B8FA4D00871450 /* InsideFolderView.swift */,
 				C00CE36C29C3866D001806A3 /* FolderListView.swift */,
 				C0BE980029B8FD7C00871450 /* FolderView.swift */,
+				2040907729CCD17F008F3520 /* FileView.swift */,
 				C00CE36A29C38190001806A3 /* NewFolderView.swift */,
 				C00CE36E29C38951001806A3 /* HomeView.swift */,
 			);
@@ -379,10 +379,10 @@
 				C00CE36D29C3866D001806A3 /* FolderListView.swift in Sources */,
 				C00CE36F29C38951001806A3 /* HomeView.swift in Sources */,
 				A3E8C77C29AD2FCC00BFDF8E /* MenuView.swift in Sources */,
-				C0BE97FD29B8FA4D00871450 /* InsideFolderView.swift in Sources */,
 				C0BE97FB29B6741100871450 /* SettingsView.swift in Sources */,
 				C0B49B8A29C794DC000D245F /* SignupView.swift in Sources */,
 				C0BE97FF29B8FB1500871450 /* FolderList.swift in Sources */,
+				2040907829CCD17F008F3520 /* FileView.swift in Sources */,
 				A3E8C7A929AE6F1600BFDF8E /* MapView.swift in Sources */,
 				A3E8C7A729AE6EA500BFDF8E /* Map.swift in Sources */,
 				A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */,

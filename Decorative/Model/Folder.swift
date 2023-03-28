@@ -9,7 +9,7 @@ import Foundation
 class Folder : File {
     @Published var files : [File]
     
-    init(_ name : String = "/", parent: Folder? = nil, files : [File] = [File()]) {
+    init(_ name : String = "qed", parent: Folder? = nil, files : [File] = [File()]) {
         self.files = files
         super.init(name, parent: parent)
     }

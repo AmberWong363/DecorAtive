@@ -1,15 +1,15 @@
 //
-//  FolderListView.swift
+//  FileView.swift
 //  Decorative
 //
-//  Created by Maya Taylor (student LM) on 3/8/23.
+//  Created by Reuben Gottesman (student LM) on 3/23/23.
 //
 
 import SwiftUI
 
-struct FolderView: View {
-    @Binding var folder: File
-   
+struct FileView: View {
+    @Binding var file: File
+
     
     var body: some View {
         
@@ -22,18 +22,15 @@ struct FolderView: View {
             
             HStack(){
                 
-                Image("folder")
+                Image("file")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50.0, height: 50.0)
                     .padding()
                 
-                Text("\(folder.name)")
+                Text("\(file.name)")
                     .font(Font.title2)
                     .padding()
-                    .onTapGesture {
-                        FolderListView(folder: type($folder)
-                    }
                 
                 Spacer()
                 
