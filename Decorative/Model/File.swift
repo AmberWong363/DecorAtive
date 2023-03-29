@@ -11,7 +11,7 @@ class File : ObservableObject, Identifiable {
     @Published var parent : Folder?
     let id = UUID()
     
-    init(_ name : String = "", parent : Folder? = nil) {
+    init(_ name : String = "/", parent : Folder? = nil) {
         self.name = name
         self.parent = parent
     }
