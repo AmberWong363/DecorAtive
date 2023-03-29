@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3026B2929D4B238009F4FCC /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2829D4B238009F4FCC /* ViewState.swift */; };
 		A393455C29B10FDF004D66D4 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455B29B10FDF004D66D4 /* TileView.swift */; };
 		A393456029B110C2004D66D4 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455F29B110C2004D66D4 /* Tile.swift */; };
 		A393456329B26E65004D66D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393456229B26E65004D66D4 /* Constants.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3026B2829D4B238009F4FCC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		A393455B29B10FDF004D66D4 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		A393455F29B110C2004D66D4 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		A393456229B26E65004D66D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				A393455F29B110C2004D66D4 /* Tile.swift */,
 				A393456229B26E65004D66D4 /* Constants.swift */,
 				A393456429BA5366004D66D4 /* User.swift */,
+				A3026B2829D4B238009F4FCC /* ViewState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				A3E8C77C29AD2FCC00BFDF8E /* ContentView.swift in Sources */,
 				A3E8C7A929AE6F1600BFDF8E /* MapView.swift in Sources */,
+				A3026B2929D4B238009F4FCC /* ViewState.swift in Sources */,
 				A393455C29B10FDF004D66D4 /* TileView.swift in Sources */,
 				A3E8C7A729AE6EA500BFDF8E /* Map.swift in Sources */,
 				A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */,

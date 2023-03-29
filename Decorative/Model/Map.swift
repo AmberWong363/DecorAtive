@@ -10,7 +10,7 @@ import Foundation
 class Map : ObservableObject {
     @Published var array : [[Tile]]
     @Published var name : String
-    @Published var metric : Bool
+    @Published var room : [[Tile]]
     var extendedArray : [[Tile]] {
         var arr : [[Tile]] = []
         for i in 0..<array.count {
@@ -50,10 +50,64 @@ class Map : ObservableObject {
         [Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile()],
         [Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile()],
         [Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile(), Tile()]],
-         name : String = "New Map", metric : Bool = false) {
+         name : String = "Untitled Map", room : [[Tile]] = []) {
         self.array = array
         self.name = name
-        self.metric = metric
+        self.room = room
+    }
+    
+    func generateRoomArray() -> [[Tile]]{
+        var arr : [[Tile]] = []
+        
+        for i in extendedArray {
+            for j in 0..<i.count {
+                if i[j].selected {
+                    arr.append(i)
+                    break
+                }
+            }
+        }
+        
+        var smallGap = -1
+        for i in arr {
+            for j in 0..<i.count {
+                if i[j].selected && smallGap == -1{
+                    smallGap = j
+                    break
+                } else if i[j].selected && smallGap > -1 {
+                    if j < smallGap {
+                        smallGap = j
+                    }
+                    break
+                }
+            }
+        }
+        
+        for i in 0..<arr.count {
+            for _ in 0..<smallGap {
+                arr[i].remove(at: 0)
+            }
+        }
+        
+        var largeGap = -1
+        for i in arr {
+            for j in 0..<i.count {
+                if i[i.count - j - 1].selected && largeGap == -1{
+                    largeGap = j
+                    break
+                } else if i[i.count - j - 1].selected && largeGap > -1 {
+                    if j < largeGap {
+                        largeGap = j
+                    }
+                    break
+                }
+            }
+        }
+        for i in 0..<arr.count {
+            arr[i].removeLast(largeGap)
+        }
+        
+        return arr
     }
     
     func generateRectangleArea(tile1Indices : (Int, Int), tile2Indices : (Int, Int)) {
@@ -134,35 +188,35 @@ class Map : ObservableObject {
             }
         }
         
-//        Debugging Tool
-//        for i in array {
-//            for j in i {
-//                if j.selected {
-//                    print("X ", terminator: "")
-//                } else {
-//                    print("- ", terminator: "")
-//                }
-//            }
-//            print()
-//        }
-//        print()
-//
-//        for i in array {
-//            for j in i {
-//                for k in j.inner! {
-//                    for l in k {
-//                        if l.selected {
-//                            print("X", terminator: "")
-//                        } else {
-//                            print("-", terminator: "")
-//                        }
-//                    }
-//                    print()
-//                }
-//            }
-//            print()
-//        }
-//        print()
+        //        Debugging Tool
+        //        for i in array {
+        //            for j in i {
+        //                if j.selected {
+        //                    print("X ", terminator: "")
+        //                } else {
+        //                    print("- ", terminator: "")
+        //                }
+        //            }
+        //            print()
+        //        }
+        //        print()
+        //
+        //        for i in array {
+        //            for j in i {
+        //                for k in j.inner! {
+        //                    for l in k {
+        //                        if l.selected {
+        //                            print("X", terminator: "")
+        //                        } else {
+        //                            print("-", terminator: "")
+        //                        }
+        //                    }
+        //                    print()
+        //                }
+        //            }
+        //            print()
+        //        }
+        //        print()
         
         
         // OH GOD
@@ -306,6 +360,18 @@ class Map : ObservableObject {
                 }
             default:
                 return
+            }
+        }
+        
+        for i in array {
+            for j in i {
+                for k in j.inner! {
+                    for l in k {
+                        if l.selected {
+                            j.selected = true
+                        }
+                    }
+                }
             }
         }
     }

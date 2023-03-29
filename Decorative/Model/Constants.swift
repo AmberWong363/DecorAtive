@@ -31,6 +31,10 @@ public extension Binding {
     }
 }
 
+enum viewState {
+    case authenticate, signup, login, forgotPassword, settings, map, room
+}
+
 extension Color {
     static let accent = Color("Accent")
 }
