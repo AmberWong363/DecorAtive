@@ -14,7 +14,7 @@ struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
     @Binding var viewState: ViewState
     @State var showSheet: Bool = false
-   
+    var name = ""
     @State var editMode = false
     @ObservedObject var login = Login()
 
@@ -31,7 +31,7 @@ struct SettingsView: View {
             Button {
                 showSheet.toggle()
             } label: {
-            Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:150, height: 150, alignment: .center).clipShape(Circle())
+                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:150, height: 150, alignment: .center).clipShape(Circle())
             }
           Spacer()
             Spacer()
@@ -51,6 +51,15 @@ struct SettingsView: View {
                            Text(userInfo.username).font(.system(size: 20))
                            Text(userInfo.userEmail).font(.system(size: 20))
                            Text("********").font(.system(size: 20))
+                HStack {
+                    Toggle("", isOn: $userInfo.metric)
+                    if userInfo.metric {
+                    Text("ft")
+                           }
+                        else {
+                        Text("m")
+                           }
+                           }
                        }
             
            

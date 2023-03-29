@@ -10,7 +10,7 @@ import struct Kingfisher.KFImage
 import FirebaseAuth
 
 enum ViewState {
-    case authenticate, signup, login, forgotPassword, settings
+    case authenticate, signup, login, forgotPassword, settings, map, room
 }
 
 struct MenuView: View {

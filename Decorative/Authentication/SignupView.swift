@@ -33,7 +33,7 @@ struct SignupView: View {
                 print("success")
                     viewState = .login
                     } else {
-                    print(error?.localizedDescription)
+                        print(error?.localizedDescription as Any)
                         }
                         }
                 } label: {
