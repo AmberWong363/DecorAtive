@@ -26,11 +26,11 @@ struct LoginView: View {
                 Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
                 Spacer()
                     
-                TextField("Username or Email Address:" , text: $userInfo.userEmail) .padding()
-                    .cornerRadius(20.0)
+                TextField("Email Address:" , text: $userInfo.userEmail) .padding()
+                    .cornerRadius(20.0).disableAutocorrection(true).autocapitalization(.none)
                 
                 SecureField("Password" , text: $userInfo.password) .padding()
-                    .cornerRadius(20.0)
+                    .cornerRadius(20.0).disableAutocorrection(true).autocapitalization(.none)
                    
                    
                 
@@ -54,38 +54,38 @@ struct LoginView: View {
                         .background(Color.green)
                         .cornerRadius(15.0)
                 }.padding(.all).alert("Incorrect Password", isPresented: $isPresented) {
-                    Button("Try Again", role: .cancel) {
-                    }
-                    
-                        
-                    Button {   self.viewState = .forgotPassword
-                    } label: {
-                        Text("Forgot Password")
-                    }
-                    HStack {
-                    Button {
-                        self.viewState = .forgotPassword
-                    } label: {
-                        Text("Forgot Password").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
-      
-                    }
-                    
-                    Button {
-                        self.viewState = .authenticate
-                    } label: {
-                        Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
-                    }.padding(.all)
+                    Button("Try Again", role: .cancel)
+                    {
                     }
                     
                 }
+                    
+                    HStack {
+                        Spacer()
+                    Button {
+                        self.viewState = .forgotPassword
+                    } label: {
+                        Text("Forgot Password").frame(width: 150, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
+      
+                    }
+                    Spacer()
+                    Button {
+                        self.viewState = .authenticate
+                    } label: {
+                        Text("< Back").frame(width: 150, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
+                    }
+                        Spacer()
+                    }
+                    
+                
             }.background(
-                LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.green, .blue]), startPoint: .top, endPoint: .bottom)
                   .edgesIgnoringSafeArea(.all))
                 
               
             }
-        }
-    
+        
+}
 
 
 
