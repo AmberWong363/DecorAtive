@@ -17,13 +17,14 @@ struct SettingsView: View {
     var name = ""
     @State var editMode = false
     @ObservedObject var login = Login()
+    @State private var showPassword = false
 
     
     var body: some View {
         
 
         NavigationView {
-       
+        
             
         VStack {
             
@@ -31,7 +32,10 @@ struct SettingsView: View {
             Button {
                 showSheet.toggle()
             } label: {
-                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:150, height: 150, alignment: .center).clipShape(Circle())
+                ZStack {
+                    Circle().foregroundColor(.accentColor).frame(width:220, height: 220, alignment: .center)
+                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:200, height: 200, alignment: .center).clipShape(Circle())
+            }
             }
           Spacer()
             Spacer()
@@ -48,9 +52,18 @@ struct SettingsView: View {
                            .disableAutocorrection(true)
                     
                        } else {
+                           HStack {
+                            Text("Username: ")
                            Text(userInfo.username).font(.system(size: 20))
+                           }
+                           HStack {
+                            Text("Email: ")
                            Text(userInfo.userEmail).font(.system(size: 20))
+                           }
+                           HStack {
+                            Text("Password: ")
                            Text("********").font(.system(size: 20))
+                           }
                 HStack {
                     Toggle("", isOn: $userInfo.metric)
                     if userInfo.metric {
@@ -74,9 +87,7 @@ struct SettingsView: View {
             
             
        
-        }.sheet(isPresented: $showSheet)
-        
-            {
+        }.sheet(isPresented: $showSheet) {
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
            
@@ -134,3 +145,5 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView(viewState: Binding.constant(.authenticate))
     }
 }
+
+

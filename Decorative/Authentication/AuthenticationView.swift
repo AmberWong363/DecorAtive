@@ -12,13 +12,14 @@ import FirebaseAuth
 struct AuthenticationView: View {
     
     @Binding var viewState: ViewState
-    
     var body: some View {
         ZStack {
             Rectangle().edgesIgnoringSafeArea(.all).foregroundColor(.blue)
             VStack {
                 Spacer()
-                Image("poke logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
+                
+                Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
+                
                 Spacer()
                 
                 Button {

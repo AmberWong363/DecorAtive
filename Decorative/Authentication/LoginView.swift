@@ -17,16 +17,22 @@ struct LoginView: View {
    
     
     var body: some View {
-        ZStack {
-            Rectangle().edgesIgnoringSafeArea(.all).foregroundColor(.blue)
+      
             VStack {
                 Spacer()
-                Image("").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
+                Text("Decor-ative")
+                  .font(.largeTitle).foregroundColor(Color.white)
+                  .padding([.top, .bottom], 40)
+                Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
                 Spacer()
                     
-                TextField("Username or Email Address:" , text: $userInfo.userEmail).padding(.all)
+                TextField("Username or Email Address:" , text: $userInfo.userEmail) .padding()
+                    .cornerRadius(20.0)
                 
-                SecureField("Password" , text: $userInfo.password).padding(.all)
+                SecureField("Password" , text: $userInfo.password) .padding()
+                    .cornerRadius(20.0)
+                   
+                   
                 
                 Button {
                     Auth.auth().signIn(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
@@ -41,7 +47,12 @@ struct LoginView: View {
                                             }
                     
                 } label: {
-                    Text("Login").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
+                    Text("Login")  .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.green)
+                        .cornerRadius(15.0)
                 }.padding(.all).alert("Incorrect Password", isPresented: $isPresented) {
                     Button("Try Again", role: .cancel) {
                     }
@@ -51,25 +62,30 @@ struct LoginView: View {
                     } label: {
                         Text("Forgot Password")
                     }
-                        
+                    HStack {
+                    Button {
+                        self.viewState = .forgotPassword
+                    } label: {
+                        Text("Forgot Password").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
+      
+                    }
+                    
+                    Button {
+                        self.viewState = .authenticate
+                    } label: {
+                        Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
+                    }.padding(.all)
+                    }
                     
                 }
-            }
+            }.background(
+                LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
+                  .edgesIgnoringSafeArea(.all))
                 
-                Button {
-                    self.viewState = .forgotPassword
-                } label: {
-                    Text("Forgot Password").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
-                }.padding(.all)
-                
-                Button {
-                    self.viewState = .authenticate
-                } label: {
-                    Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
-                }.padding(.all)
+              
             }
         }
-    }
+    
 
 
 
