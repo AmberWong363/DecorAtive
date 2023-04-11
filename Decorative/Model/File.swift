@@ -8,10 +8,10 @@ import Foundation
 
 class File : ObservableObject, Identifiable {
     @Published var name : String
-    @Published var parent : Folder?
+    @Published var parent : File?
     let id = UUID()
     
-    init(_ name : String = "/", parent : Folder? = nil) {
+    init(_ name : String = "/", parent : File? = nil, files : [File]? = nil) {
         self.name = name
         self.parent = parent
     }

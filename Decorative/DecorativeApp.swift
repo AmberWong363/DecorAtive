@@ -25,12 +25,13 @@ struct DecorativeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var userInfo : UserInfo = UserInfo()
 //    @StateObject var folder: Folder = Folder("p1", parent: nil, files: [Folder(), File(), File()])
+    @StateObject var root: Root = Root()
     
     var body: some Scene {
         WindowGroup {
             
             HomeView()
-               
+                .environmentObject(root)
             
 //            MenuView()
 //                .environmentObject(FolderList())

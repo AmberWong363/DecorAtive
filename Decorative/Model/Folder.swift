@@ -6,11 +6,14 @@
 
 import Foundation
 
-class Folder : File {
+class Folder : ObservableObject, Identifiable {
     @Published var files : [File]
+    @Published var folders : [Folder]
+    @Published var name : String
     
-    init(_ name : String = "qed", parent: Folder? = nil, files : [File] = [File()]) {
+    init(_ name : String = "/", files : [File] = [], folders : [Folder] = []) {
+        self.folders = folders
+        self.name = name
         self.files = files
-        super.init(name, parent: parent)
     }
 }

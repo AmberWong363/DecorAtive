@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FolderView: View {
-    @Binding var folder: File
-   
+    @Binding var folder: Folder
+    @EnvironmentObject var root : Root
     
     var body: some View {
         
@@ -31,9 +31,12 @@ struct FolderView: View {
                 Text("\(folder.name)")
                     .font(Font.title2)
                     .padding()
-                    .onTapGesture {
-                        FolderListView(folder: type($folder)
-                    }
+//                    .onTapGesture {
+//                        print("tap.")
+//                        
+//                       HomeView(baseFolder:  folder)
+//                       
+//                    }
                 
                 Spacer()
                 
@@ -42,6 +45,12 @@ struct FolderView: View {
                 
                 Menu {
                     
+                    Button {
+                        Open()
+                    } label: {
+                        Text("Open")
+                    }
+                     
                     Button {
                         Rename()
                     } label: {
@@ -76,6 +85,10 @@ struct FolderView: View {
                 
             }
         }
+    }
+    
+    func Open() {
+        //
     }
     func Rename() {
         //

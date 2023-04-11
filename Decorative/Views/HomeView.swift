@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var baseFolder: Folder = Folder("p1", parent: nil, files: [Folder(), File(), File()])
+    @StateObject var baseFolder: File = File("p1", parent: nil, files: [File(), File()])
+    let num = 2
     var body: some View {
-     
-        FolderListView(folder: Binding.constant(baseFolder))
         
-        
+        VStack{
+             
+            
+            FolderListView()
+            
         }
-        
-        
     }
+    
+    
+}
 
 
 
