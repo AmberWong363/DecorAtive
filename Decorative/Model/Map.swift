@@ -374,5 +374,22 @@ class Map : ObservableObject {
                 }
             }
         }
+        
+        var selected = false
+        for i in array {
+            for j in i {
+                for k in j.inner! {
+                    for l in k {
+                        if l.selected {
+                            selected = true
+                        }
+                    }
+                }
+                if !selected {
+                    j.selected = false
+                }
+                selected = false
+            }
+        }
     }
 }

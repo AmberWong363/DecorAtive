@@ -11,7 +11,8 @@ struct MapExpansionView: View {
     @State var zoom = 10
     @State var isEditing : Bool = false
     @EnvironmentObject var map : Map
-    
+    @EnvironmentObject var currentRoom : Room
+    @EnvironmentObject var viewState : ViewState
     var body: some View {
         ZStack {
             VStack {
@@ -23,9 +24,10 @@ struct MapExpansionView: View {
                         .padding()
                     
                     Button {
-                        map.room = map.generateRoomArray()
+                        currentRoom.room = map.generateRoomArray()
+                        viewState.state = .furniture
                     } label: {
-                        Text("Generate Room")
+                        Text("Room")
                             .font(Font.custom("Generate Room Font", fixedSize: 15))
                             .frame(width: 120, height: 50)
                             .background(Color.accent)

@@ -48,10 +48,10 @@ struct TileView: View {
                                             user.selectedTile = nil
                                         }
                                     } else {
-                                        print(user.selectedSpecialTile)
-                                        print(indices.0 * 3 + i)
-                                        print(indices.1 * 3 + index)
-                                        print()
+//                                        print(user.selectedSpecialTile)
+//                                        print(indices.0 * 3 + i)
+//                                        print(indices.1 * 3 + index)
+//                                        print()
                                         
                                         map.extendedArray[indices.0 * 3 + i][indices.1 * 3 + index].createSelect.toggle()
                                         

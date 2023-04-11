@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Tile : ObservableObject, Identifiable {
     @Published var restricted : Bool
@@ -13,10 +14,15 @@ class Tile : ObservableObject, Identifiable {
     @Published var createSelect : Bool
     @Published var inner : [[Tile]]?
     @Published var value : Double
+    @Published var wallType : [wallType]
     let id = UUID()
     
+    static func ==(rhs : Tile, lhs : Tile) -> Bool {
+        return rhs.value == lhs.value
+    }
+    
     init(restricted : Bool = false,
-         value : Double = 3, selected : Bool = false, createSelect : Bool = false, inner : [[Tile]]? =
+         value : Double = 3, wallType : [wallType] = [.none, .none, .none, .none], selected : Bool = false, createSelect : Bool = false, inner : [[Tile]]? =
          [
              [
                  Tile(value: 1, inner: nil),
@@ -38,5 +44,6 @@ class Tile : ObservableObject, Identifiable {
         self.selected = selected
         self.createSelect = createSelect
         self.inner = inner
+        self.wallType = wallType
     }
 }
