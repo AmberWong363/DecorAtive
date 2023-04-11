@@ -41,9 +41,7 @@ struct SettingsView: View {
             Spacer()
           
                 if editMode {
-                    TextField("Username", text: $userInfo.username).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-                        .autocapitalization(.words)
-                        .disableAutocorrection(true)
+                   
                     TextField("Email", text: $userInfo.userEmail).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
                            .autocapitalization(.words)
                            .disableAutocorrection(true)
@@ -52,10 +50,6 @@ struct SettingsView: View {
                            .disableAutocorrection(true)
                     
                        } else {
-                           HStack {
-                            Text("Username: ")
-                           Text(userInfo.username).font(.system(size: 20))
-                           }
                            HStack {
                             Text("Email: ")
                            Text(userInfo.userEmail).font(.system(size: 20))

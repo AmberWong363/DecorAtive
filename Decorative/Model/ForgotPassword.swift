@@ -20,11 +20,11 @@ struct ForgotPassword: View {
                 Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
                 Spacer()
                     
-                TextField("Username or Email Address:" , text: $userInfo.username).padding(.all)
+                TextField("Email Address:" , text: $userInfo.userEmail).padding(.all)
                 
                
                 Button {
-                    Auth.auth().sendPasswordReset(withEmail: userInfo.username) { error in
+                    Auth.auth().sendPasswordReset(withEmail: userInfo.userEmail) { error in
                         if let error = error {
                             print(error.localizedDescription)
                         } else {
