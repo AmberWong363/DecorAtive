@@ -9,30 +9,27 @@ import Foundation
 import FirebaseAuth
 
 class UserInfo: ObservableObject {
-@Published var username: String
+@Published var userEmail: String
 @Published var password: String
+@Published var image: UIImage = UIImage(named: "default")!
 @Published var loggedIn: Bool = false
-@Published var firstName: String
-@Published var lastName: String
-@Published var address: String
+@Published var metric: Bool = false
     
-    var dictionary: [String: Any] {
-        ["First Name": firstName, "Last Name": lastName, "Address": address]
-    }
+   
 
-init(username: String = "", password: String = "") {
-self.username = username
+    init(userEmail: String = "", password: String = "", metric: Bool = false) {
+self.userEmail = userEmail
 self.password = password
-self.firstName = ""
-self.lastName = ""
-self.address = ""
+self.metric = metric
     
     Auth.auth().addStateDidChangeListener { _, user in
         guard let user = user else {return}
         
         self.loggedIn.toggle()
-        self.username = user.email ?? ""
+        self.userEmail = user.email ?? ""
         
     }
 }
 }
+
+

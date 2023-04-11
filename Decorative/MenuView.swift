@@ -10,7 +10,7 @@ import struct Kingfisher.KFImage
 import FirebaseAuth
 
 enum ViewState {
-    case authenticate, signup, login, forgotPassword, settings
+    case authenticate, signup, login, forgotPassword, settings, map, room
 }
 
 struct MenuView: View {
@@ -33,9 +33,9 @@ struct MenuView: View {
         else if viewState == .signup && !userInfo.loggedIn  {
             SignupView(viewState: $viewState)
         }
-//        else if viewState == .forgotPassword && !userInfo.loggedIn  {
-//            ForgotPassword(viewState: $viewState)
-//        }
+        else if viewState == .forgotPassword && !userInfo.loggedIn  {
+            ForgotPassword(viewState: $viewState)
+        }
         else if viewState == .settings && userInfo.loggedIn {
             SettingsView(viewState: $viewState)
         }
@@ -51,7 +51,7 @@ struct MenuView: View {
 //                    .frame(width: geometry.size.width * 0.25, height: geometry.size.height)
 //                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("AccentColor")/*@END_MENU_TOKEN@*/)
 //                }
-        
+          
          
                     
                     TabView {

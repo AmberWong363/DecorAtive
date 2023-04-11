@@ -14,24 +14,24 @@ struct SignupView: View {
     @EnvironmentObject var userInfo: UserInfo
  
     var body: some View {
-        ZStack {
-            Rectangle().edgesIgnoringSafeArea(.all).foregroundColor(.blue)
+      
             VStack {
                 Spacer()
-                Image("poke logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
+                Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
                 Spacer()
-                    
-                TextField("Username or Email Address:" , text: $userInfo.username).padding(.all)
+               
                 
-                SecureField("Password" , text: $userInfo.password).padding(.all)
+                TextField("Email Address" , text: $userInfo.userEmail).padding(.all).disableAutocorrection(true).autocapitalization(.none)
+                
+                SecureField("Password" , text: $userInfo.password).padding(.all).disableAutocorrection(true).autocapitalization(.none)
                 
                 Button {
-                    Auth.auth().createUser(withEmail: userInfo.username, password: userInfo.password) { user, error in
+                    Auth.auth().createUser(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
                 if let _ = user {
                 print("success")
                     viewState = .login
                     } else {
-                    print(error?.localizedDescription)
+                        print(error?.localizedDescription as Any)
                         }
                         }
                 } label: {
@@ -42,8 +42,10 @@ struct SignupView: View {
                 } label: {
                     Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
                 }.padding(.all)
-            }
-        }
+            }.background(
+                LinearGradient(gradient: Gradient(colors: [.green, .blue]), startPoint: .top, endPoint: .bottom)
+                  .edgesIgnoringSafeArea(.all))
+        
     }
 }
 
