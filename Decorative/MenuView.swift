@@ -17,7 +17,7 @@ struct MenuView: View {
    
     @State var presentAlert = false
     @State private var folderName: String = ""
-    @EnvironmentObject var folders: FolderList
+//    @EnvironmentObject var folders: FolderList
     @State var index: Int = 0
     @State var viewState: ViewState = .authenticate
     @EnvironmentObject var userInfo: UserInfo
@@ -57,10 +57,10 @@ struct MenuView: View {
                     TabView {
                         
                         
-                        HomeView( index: $index, folder: $folders.folders[index]) .tabItem {
-                            Image(systemName: "house")
-                            Text("Home")
-                        }
+//                        HomeView( index: $index, folder: $folders.folders[index]) .tabItem {
+//                            Image(systemName: "house")
+//                            Text("Home")
+//                        }
                         
                         SettingsView( viewState: $viewState) .tabItem {
                     Image(systemName: "gearshape")
@@ -127,11 +127,11 @@ struct MenuView: View {
 }
 
 
-    struct MenuView_Previews: PreviewProvider {
-        static var previews: some View {
-            MenuView()     .environmentObject(FolderList()).environmentObject(UserInfo())
-        }
-    }
+//    struct MenuView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            MenuView()     .environmentObject(FolderList()).environmentObject(UserInfo())
+//        }
+//    }
 
 
 //TextField("Name this folder", text: $rename)
