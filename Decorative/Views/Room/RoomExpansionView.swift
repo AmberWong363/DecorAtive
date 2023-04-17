@@ -19,23 +19,28 @@ struct RoomExpansionView: View {
             VStack{
                 FurnitureBarView(furnitureList: $currentRoom.furnitureList, zoom: $zoom)
                 
-                HStack {
-                    if !(currentTile == Tile(value: -1)) {
-                        RoomTileEditView(currentTile: $currentTile)
-                    } else if currentFurniture != nil {
-                        FurnitureEditView(furniture: $currentFurniture, zoom: $zoom)
-                    } else {
-                        VStack {
-                            Text("Select a Tile or Furniture")
-                        }
-                        .frame(width: 120)
-                    }
-                    
+                ZStack {
                     RoomView(zoom: $zoom, roomState: $roomState, currentFurniture: $currentFurniture, currentTile: $currentTile)
-                        .padding()
+                        .padding(.horizontal)
+                    
+                    HStack {
+                        if !(currentTile == Tile(value: -1)) {
+                            RoomTileEditView(currentTile: $currentTile)
+                        } else if currentFurniture != nil {
+                            FurnitureEditView(furniture: $currentFurniture, zoom: $zoom)
+                        } else {
+                            VStack {
+                                Rectangle()
+                                    .foregroundColor(Color.black.opacity(0.8))
+                                    .frame(width: 10)
+                            }
+                            
+                        }
+                        Spacer()
+                    }
                 }
                 
-                Slider(value: .convert(from: $zoom), in: 20...100, step: 1)
+                Slider(value: .convert(from: $zoom), in: 10...100, step: 1)
                     .padding()
             }
         }

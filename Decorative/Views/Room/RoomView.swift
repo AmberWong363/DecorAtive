@@ -12,6 +12,7 @@ struct RoomView: View {
     @Binding var roomState : roomState
     @Binding var currentFurniture : Furniture?
     @Binding var currentTile : Tile
+    @State var lastClicked : (Int, Int) = (-1, -1)
     @EnvironmentObject var currentRoom : Room
     var body: some View {
         ZStack {
@@ -25,19 +26,24 @@ struct RoomView: View {
                                     ForEach(currentRoom.room[index].indices, id: \.self) { i in
                                         RoomTileView(zoom: $zoom, tile: $currentRoom.room[index][i], roomState: $roomState)
                                             .onTapGesture {
-                                                currentFurniture = nil
-                                                currentTile = currentRoom.room[index][i]
+                                                if (index, i) != lastClicked {
+                                                    currentFurniture = nil
+                                                    currentTile = currentRoom.room[index][i]
+                                                    lastClicked = (index, i)
+                                                } else {
+                                                    currentTile = Tile(value: -1)
+                                                }
                                             }
                                     }
                                 }
                             }
                         }
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading) {
-                                // Furniture
-                                ForEach(currentRoom.furnitureList.list.indices, id: \.self) { index in
-                                    if currentRoom.furnitureList.list[index].inRoom {
-                                        HStack(spacing: 0) {
+                        ZStack {
+                            // Furniture
+                            ForEach(currentRoom.furnitureList.list.indices, id: \.self) { index in
+                                if currentRoom.furnitureList.list[index].inRoom {
+                                    HStack(spacing: 0) {
+                                        VStack(spacing: 0) {
                                             FurnitureRoomView(furniture: $currentRoom.furnitureList.list[index], zoom: $zoom)
                                                 .offset(x:
                                                             CGFloat(zoom*2*currentRoom.furnitureList.list[index].position.0),
@@ -45,15 +51,20 @@ struct RoomView: View {
                                                             CGFloat(zoom*2 * currentRoom.furnitureList.list[index].position.1)
                                                 )
                                                 .onTapGesture {
-                                                    currentTile = Tile(value: -1)
-                                                    currentFurniture = currentRoom.furnitureList.list[index]
+                                                    if currentFurniture == nil || !(currentFurniture! == currentRoom.furnitureList.list[index]) {
+                                                        currentTile = Tile(value: -1)
+                                                        currentFurniture = currentRoom.furnitureList.list[index]
+                                                    } else {
+                                                        currentFurniture = nil
+                                                    }
                                                 }
+                                            Spacer()
                                         }
+                                        Spacer()
                                     }
                                 }
-                                Spacer()
                             }
-                            Spacer()
+                            
                         }
                     }
                 }
@@ -65,6 +76,7 @@ struct RoomView: View {
             }
         }
     }
+        
 }
 
 

@@ -18,6 +18,7 @@ class Furniture : ObservableObject, Identifiable {
     @Published var inRoom : Bool
     @Published var quantity : Int
     @Published var angle : Int
+    @Published var ogImageIcon : String
     
     let id = UUID()
     
@@ -32,6 +33,7 @@ class Furniture : ObservableObject, Identifiable {
         self.inRoom = inRoom
         self.quantity = quantity
         self.angle = angle
+        self.ogImageIcon = imageIcon
     }
     
     static func ==(rhs : Furniture, lhs : Furniture) -> Bool {

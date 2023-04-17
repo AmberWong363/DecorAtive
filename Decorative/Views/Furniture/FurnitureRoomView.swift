@@ -18,6 +18,7 @@ struct FurnitureRoomView: View {
                 .frame(
                     width: (CGFloat(zoom*2*furniture.tileWidth)),
                     height: (CGFloat(zoom*2*furniture.tileHeight)))
+                .border(Color.red, width: 5)
         }
     }
 }
