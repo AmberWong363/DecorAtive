@@ -16,8 +16,8 @@ struct FolderView: View {
         ZStack {
             
             Rectangle()
-                .frame(width: .infinity, height: 60, alignment: .center)
-                .foregroundColor(Color.orange)
+                .frame(height: 60, alignment: .center)
+                .foregroundColor(Color.accentColor)
                 .cornerRadius(8)
             
             HStack(){
@@ -44,17 +44,11 @@ struct FolderView: View {
                 
                 
                 Menu {
-                    
-                    Button {
-                        Open()
-                    } label: {
-                        Text("Open")
-                    }
                      
                     Button {
                         Rename()
                     } label: {
-                        Text("rename")
+                        Text("Rename")
                     }
                     
                     Button {

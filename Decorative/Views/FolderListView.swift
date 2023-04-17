@@ -9,15 +9,36 @@ import SwiftUI
 struct FolderListView: View {
     @EnvironmentObject var root : Root
     var body: some View {
-        VStack {
-            Button {
-                if !root.previous.isEmpty {
-                    root.folder = root.previous.last!
-                    root.previous.removeLast()
+        VStack(spacing: 0) {
+            
+            ZStack{
+                
+                Rectangle()
+                    .frame(height: 40, alignment: .center)
+                    .foregroundColor(Color.gray)
+                    .ignoresSafeArea()
+                
+                HStack{
+                    
+                    Button {
+                        if !root.previous.isEmpty {
+                            root.folder = root.previous.last!
+                            root.previous.removeLast()
+                        }
+                    } label: {
+                        Text(" <-Back")
+                            .foregroundColor(Color.black)
+                            .cornerRadius(5)
+                            
+                    }
+                    
+                    Spacer()
                 }
-            } label: {
-                Text("Back")
+                
+               
+                
             }
+            
             ScrollView {
                 VStack(spacing: 0) {
                     ForEach(root.folder.folders.indices, id: \.self) { index in
@@ -29,6 +50,8 @@ struct FolderListView: View {
                     }
                 }
             }
+            
+            Spacer()
         }
     }
 }
