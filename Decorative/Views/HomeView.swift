@@ -8,51 +8,62 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var baseFolder: File = File("p1", parent: nil, files: [File(), File()])
-    let num = 2
+    
+    @EnvironmentObject var root : Root
+    @State var name : String = "Decor-Ative"
+    
     var body: some View {
         
         ZStack{
             
             Rectangle()
                 .frame(width: .infinity, height: .infinity, alignment: .topLeading)
-                .foregroundColor(Color.brown)
+                .foregroundColor(Color("Grey1"))
                 .ignoresSafeArea()
             
             HStack{
                 Rectangle()
                     .frame(width: 50, height: .infinity, alignment: .topLeading)
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color("green1"))
                     .ignoresSafeArea()
                 
-                 Spacer()
+                Spacer()
                 
             }
             
             VStack(spacing: 0){
                 
                 ZStack{
+                    
                     Rectangle()
                         .frame(height: 100, alignment: .center)
-                        .foregroundColor(Color.brown)
+                        .foregroundColor(Color("Grey1"))
                         .ignoresSafeArea()
                     Rectangle()
-                        .frame(height: 100, alignment: .center)
+                        .frame(height: 80, alignment: .center)
                         .foregroundColor(Color.accentColor)
-                    //                    .ignoresSafeArea()
                     
-                    HStack{
-                        Image("Logo5")
-                            .resizable()
-                            .frame(width: 60, height: 60, alignment: .top)
-                            .padding()
-                            .ignoresSafeArea()
+                    VStack{
                         
-                        Text("Decor-Ative")
-                            .font(Font.largeTitle)
-                            .foregroundColor(Color.black)
                         
-                        Spacer()
+                        HStack{
+                            
+                            Spacer()
+                            
+                            Image("Logo5")
+                                .resizable()
+                                .frame(width: 60, height: 60, alignment: .top)
+                                .ignoresSafeArea()
+                            
+                            Spacer()
+                            
+                            Text("\(name)")
+                                .font(Font.largeTitle)
+                                .foregroundColor(Color.black)
+                            
+                            Spacer()
+                        }
+                        
                     }
                 }
                 
@@ -61,14 +72,15 @@ struct HomeView: View {
                     ZStack{
                         Rectangle()
                             .frame(width: 50, height: .infinity, alignment: .topLeading)
-                            .foregroundColor(Color.green)
+                            .foregroundColor(Color("green1"))
                             .ignoresSafeArea()
                         
                         VStack{
                             Menu{
                                 
                                 Button {
-                                    //
+                                    root.folder.folders.append(Folder())
+                                    root.folder = root.folder
                                 } label: {
                                     HStack{
                                         Image("NewFolderIcon")
@@ -88,7 +100,7 @@ struct HomeView: View {
                                         Text("New Room File +")
                                     }
                                 }
-
+                                
                                 
                                 
                             } label: {

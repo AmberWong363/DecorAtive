@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FolderView: View {
+    @State var rename: Bool = false
     @Binding var folder: Folder
     @EnvironmentObject var root : Root
     
@@ -27,17 +28,25 @@ struct FolderView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50.0, height: 50.0)
                     .padding()
+                    .onTapGesture {
+                        root.previous.append(root.folder)
+                        root.folder = folder
+                    }
                 
-                Text("\(folder.name)")
-                    .font(Font.title2)
-                    .padding()
-//                    .onTapGesture {
-//                        print("tap.")
-//                        
-//                       HomeView(baseFolder:  folder)
-//                       
-//                    }
-                
+                if rename == false {
+                    Text("\(folder.name)")
+                        .font(Font.title2)
+                        .padding()
+                } else {
+                    TextField("Type something here...", text: $folder.name)
+                        .padding(.vertical)
+                        .zIndex(5)
+                        .onSubmit {
+                            rename = false
+                        }
+                        
+                }
+                    
                 Spacer()
                 
                 
@@ -46,7 +55,7 @@ struct FolderView: View {
                 Menu {
                      
                     Button {
-                        Rename()
+                        rename.toggle()
                     } label: {
                         Text("Rename")
                     }
@@ -81,12 +90,7 @@ struct FolderView: View {
         }
     }
     
-    func Open() {
-        //
-    }
-    func Rename() {
-        //
-    }
+    
     func MoveTo() {
         //
     }
@@ -94,7 +98,8 @@ struct FolderView: View {
         //
     }
     func MakeACopy() {
-        //
+        root.folder.folders.append(Folder("Copy Of \(folder.name)", files: folder.files, folders: folder.folders))
+        root.folder = root.folder
     }
 }
 

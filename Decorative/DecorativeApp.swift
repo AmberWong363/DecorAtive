@@ -30,8 +30,9 @@ struct DecorativeApp: App {
     var body: some Scene {
         WindowGroup {
             
-            HomeView()
+            MenuView()
                 .environmentObject(root)
+                .environmentObject(userInfo)
             
 //            MenuView()
 //                .environmentObject(FolderList())

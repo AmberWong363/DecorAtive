@@ -57,10 +57,10 @@ struct MenuView: View {
                     TabView {
                         
                         
-//                        HomeView( index: $index, folder: $folders.folders[index]) .tabItem {
-//                            Image(systemName: "house")
-//                            Text("Home")
-//                        }
+                        HomeView() .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
                         
                         SettingsView( viewState: $viewState) .tabItem {
                     Image(systemName: "gearshape")
