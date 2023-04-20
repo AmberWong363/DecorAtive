@@ -32,7 +32,7 @@ public extension Binding {
 }
 
 enum viewState {
-    case authenticate, signup, login, forgotPassword, settings, map, room, furniture, custom
+    case authenticate, signup, login, forgotPassword, settings, map, room, furniture, custom, menu
 }
 
 enum direction {

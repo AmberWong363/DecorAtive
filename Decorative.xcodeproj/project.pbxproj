@@ -11,7 +11,21 @@
 		A3026B2B29D4B35E009F4FCC /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2A29D4B35E009F4FCC /* MotherView.swift */; };
 		A3026B2D29D4B8A9009F4FCC /* Furniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2C29D4B8A9009F4FCC /* Furniture.swift */; };
 		A3026B2F29D4B9AC009F4FCC /* FurnitureSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2E29D4B9AC009F4FCC /* FurnitureSideView.swift */; };
-		A36E468229D73F560001CAE7 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36E468129D73F560001CAE7 /* Root.swift */; };
+		A3290F5429F1DC8C00F4998A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F4E29F1DC8B00F4998A /* UserInfo.swift */; };
+		A3290F5529F1DC8C00F4998A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F4F29F1DC8B00F4998A /* Login.swift */; };
+		A3290F5629F1DC8C00F4998A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5029F1DC8C00F4998A /* ImagePicker.swift */; };
+		A3290F5729F1DC8C00F4998A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5129F1DC8C00F4998A /* ForgotPassword.swift */; };
+		A3290F5929F1DC8C00F4998A /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5329F1DC8C00F4998A /* Root.swift */; };
+		A3290F6029F1DCE200F4998A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5D29F1DCE100F4998A /* SignupView.swift */; };
+		A3290F6129F1DCE200F4998A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5E29F1DCE100F4998A /* LoginView.swift */; };
+		A3290F6229F1DCE200F4998A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5F29F1DCE200F4998A /* AuthenticationView.swift */; };
+		A3290F6A29F1DD1100F4998A /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F6529F1DD1000F4998A /* FolderView.swift */; };
+		A3290F6B29F1DD1100F4998A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F6629F1DD1000F4998A /* HomeView.swift */; };
+		A3290F6C29F1DD1100F4998A /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F6729F1DD1100F4998A /* FolderListView.swift */; };
+		A3290F6D29F1DD1100F4998A /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F6829F1DD1100F4998A /* FileView.swift */; };
+		A3290F6F29F1DD1E00F4998A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F6E29F1DD1E00F4998A /* SettingsView.swift */; };
+		A3290F7129F1DD2600F4998A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F7029F1DD2600F4998A /* MenuView.swift */; };
+		A3290F7329F1DD3B00F4998A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3290F7229F1DD3B00F4998A /* GoogleService-Info.plist */; };
 		A393455C29B10FDF004D66D4 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455B29B10FDF004D66D4 /* TileView.swift */; };
 		A393456029B110C2004D66D4 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393455F29B110C2004D66D4 /* Tile.swift */; };
 		A393456329B26E65004D66D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393456229B26E65004D66D4 /* Constants.swift */; };
@@ -60,7 +74,21 @@
 		A3026B2A29D4B35E009F4FCC /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		A3026B2C29D4B8A9009F4FCC /* Furniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture.swift; sourceTree = "<group>"; };
 		A3026B2E29D4B9AC009F4FCC /* FurnitureSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureSideView.swift; sourceTree = "<group>"; };
-		A36E468129D73F560001CAE7 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		A3290F4E29F1DC8B00F4998A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A3290F4F29F1DC8B00F4998A /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		A3290F5029F1DC8C00F4998A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A3290F5129F1DC8C00F4998A /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		A3290F5329F1DC8C00F4998A /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Root.swift; path = "../../../../../Downloads/DecorAtive-Reuben2/Decorative/Model/Root.swift"; sourceTree = "<group>"; };
+		A3290F5D29F1DCE100F4998A /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		A3290F5E29F1DCE100F4998A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A3290F5F29F1DCE200F4998A /* AuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		A3290F6529F1DD1000F4998A /* FolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		A3290F6629F1DD1000F4998A /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A3290F6729F1DD1100F4998A /* FolderListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
+		A3290F6829F1DD1100F4998A /* FileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
+		A3290F6E29F1DD1E00F4998A /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A3290F7029F1DD2600F4998A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A3290F7229F1DD3B00F4998A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A393455B29B10FDF004D66D4 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		A393455F29B110C2004D66D4 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		A393456229B26E65004D66D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -115,6 +143,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3290F5C29F1DCD500F4998A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A3290F5F29F1DCE200F4998A /* AuthenticationView.swift */,
+				A3290F5E29F1DCE100F4998A /* LoginView.swift */,
+				A3290F5129F1DC8C00F4998A /* ForgotPassword.swift */,
+				A3290F5D29F1DCE100F4998A /* SignupView.swift */,
+				A3290F4F29F1DC8B00F4998A /* Login.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A3290F6329F1DD0600F4998A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A3290F6829F1DD1100F4998A /* FileView.swift */,
+				A3290F6729F1DD1100F4998A /* FolderListView.swift */,
+				A3290F6529F1DD1000F4998A /* FolderView.swift */,
+				A3290F6629F1DD1000F4998A /* HomeView.swift */,
+				A3290F6E29F1DD1E00F4998A /* SettingsView.swift */,
+				A3290F7029F1DD2600F4998A /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		A3E4C09829E0A526007399F4 /* Room */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +206,7 @@
 		A3E8C76D29AD2FCC00BFDF8E = {
 			isa = PBXGroup;
 			children = (
+				A3290F7229F1DD3B00F4998A /* GoogleService-Info.plist */,
 				A3E8C77829AD2FCC00BFDF8E /* Decorative */,
 				A3E8C77729AD2FCC00BFDF8E /* Products */,
 			);
@@ -171,6 +225,7 @@
 		A3E8C77829AD2FCC00BFDF8E /* Decorative */ = {
 			isa = PBXGroup;
 			children = (
+				A3290F5C29F1DCD500F4998A /* Authentication */,
 				A3E8C7A529AE6E9300BFDF8E /* Model */,
 				A3E8C7A329AE6E8100BFDF8E /* Views */,
 				A3E8C77929AD2FCC00BFDF8E /* DecorativeApp.swift */,
@@ -191,6 +246,7 @@
 		A3E8C7A329AE6E8100BFDF8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3290F6329F1DD0600F4998A /* Menu */,
 				A3E4C09A29E0A550007399F4 /* Map */,
 				A3E4C09929E0A533007399F4 /* Furniture */,
 				A3E4C09829E0A526007399F4 /* Room */,
@@ -202,6 +258,9 @@
 		A3E8C7A529AE6E9300BFDF8E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3290F5029F1DC8C00F4998A /* ImagePicker.swift */,
+				A3290F5329F1DC8C00F4998A /* Root.swift */,
+				A3290F4E29F1DC8B00F4998A /* UserInfo.swift */,
 				A3E8C7AE29AE87AA00BFDF8E /* File.swift */,
 				A3E8C7AC29AE87A900BFDF8E /* Folder.swift */,
 				A3E8C7A629AE6EA500BFDF8E /* Map.swift */,
@@ -212,7 +271,6 @@
 				A3026B2C29D4B8A9009F4FCC /* Furniture.swift */,
 				A3ED95A129D6F8E900D21001 /* FurnitureList.swift */,
 				A3ED959F29D5F80000D21001 /* Room.swift */,
-				A36E468129D73F560001CAE7 /* Root.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +381,7 @@
 			files = (
 				A3E8C78129AD2FCF00BFDF8E /* Preview Assets.xcassets in Resources */,
 				A3E8C77E29AD2FCF00BFDF8E /* Assets.xcassets in Resources */,
+				A3290F7329F1DD3B00F4998A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,21 +409,31 @@
 				A3E8C7A929AE6F1600BFDF8E /* MapView.swift in Sources */,
 				A3026B2929D4B238009F4FCC /* ViewState.swift in Sources */,
 				A3E4C09C29E0BDFD007399F4 /* FurnitureRoomView.swift in Sources */,
+				A3290F6D29F1DD1100F4998A /* FileView.swift in Sources */,
+				A3290F5529F1DC8C00F4998A /* Login.swift in Sources */,
 				A3E4C0A029E0E83A007399F4 /* FurnitureEditView.swift in Sources */,
 				A3E4C08D29DDDC9A007399F4 /* RoomView.swift in Sources */,
 				A3ED95A029D5F80000D21001 /* Room.swift in Sources */,
+				A3290F6129F1DCE200F4998A /* LoginView.swift in Sources */,
 				A3E4C09329E0A3BF007399F4 /* FurnitureBarView.swift in Sources */,
 				A393455C29B10FDF004D66D4 /* TileView.swift in Sources */,
 				A3026B2F29D4B9AC009F4FCC /* FurnitureSideView.swift in Sources */,
 				A3E4C08F29DDDDA7007399F4 /* RoomTileView.swift in Sources */,
 				A3026B2B29D4B35E009F4FCC /* MotherView.swift in Sources */,
+				A3290F6B29F1DD1100F4998A /* HomeView.swift in Sources */,
+				A3290F6229F1DCE200F4998A /* AuthenticationView.swift in Sources */,
 				A3ED95A429D7154200D21001 /* CustomFurnitureView.swift in Sources */,
+				A3290F5429F1DC8C00F4998A /* UserInfo.swift in Sources */,
 				A3E8C7A729AE6EA500BFDF8E /* Map.swift in Sources */,
-				A36E468229D73F560001CAE7 /* Root.swift in Sources */,
+				A3290F6F29F1DD1E00F4998A /* SettingsView.swift in Sources */,
+				A3290F5929F1DC8C00F4998A /* Root.swift in Sources */,
 				A3E4C09E29E0E4E9007399F4 /* RoomExpansionView.swift in Sources */,
 				A3026B2D29D4B8A9009F4FCC /* Furniture.swift in Sources */,
 				A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */,
 				A3ED95A229D6F8E900D21001 /* FurnitureList.swift in Sources */,
+				A3290F6C29F1DD1100F4998A /* FolderListView.swift in Sources */,
+				A3290F6029F1DCE200F4998A /* SignupView.swift in Sources */,
+				A3290F5729F1DC8C00F4998A /* ForgotPassword.swift in Sources */,
 				A393456329B26E65004D66D4 /* Constants.swift in Sources */,
 				A3E8C7B129AE87AA00BFDF8E /* File.swift in Sources */,
 				A393456029B110C2004D66D4 /* Tile.swift in Sources */,
@@ -372,6 +441,9 @@
 				A3ED959E29D5CC2E00D21001 /* FurnitureSelectionView.swift in Sources */,
 				A3E8C7AB29AE6FB600BFDF8E /* MapExpansionView.swift in Sources */,
 				A3E8C7AF29AE87AA00BFDF8E /* Folder.swift in Sources */,
+				A3290F7129F1DD2600F4998A /* MenuView.swift in Sources */,
+				A3290F6A29F1DD1100F4998A /* FolderView.swift in Sources */,
+				A3290F5629F1DC8C00F4998A /* ImagePicker.swift in Sources */,
 				A393456529BA5368004D66D4 /* User.swift in Sources */,
 				A3E4C09529E0A479007399F4 /* FurnitureSmallView.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import Foundation
 class ViewState : ObservableObject {
     @Published var state : viewState
     
-    init(_ state : viewState = .map) {
+    init(_ state : viewState = .authenticate) {
         self.state = state
     }
 }
