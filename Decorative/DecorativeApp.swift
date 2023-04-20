@@ -26,13 +26,16 @@ struct DecorativeApp: App {
     @StateObject var userInfo : UserInfo = UserInfo()
 //    @StateObject var folder: Folder = Folder("p1", parent: nil, files: [Folder(), File(), File()])
     @StateObject var root: Root = Root()
+
     
     var body: some Scene {
         WindowGroup {
             
+
             MenuView()
                 .environmentObject(root)
                 .environmentObject(userInfo)
+
             
 //            MenuView()
 //                .environmentObject(FolderList())

@@ -58,6 +58,7 @@ struct MenuView: View {
                         
                         
                         HomeView() .tabItem {
+
                             Image(systemName: "house")
                             Text("Home")
                         }
