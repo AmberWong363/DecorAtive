@@ -8,11 +8,9 @@ import Foundation
 
 class File : ObservableObject, Identifiable {
     @Published var name : String
-    @Published var parent : File?
     let id = UUID()
     
-    init(_ name : String = "/", parent : File? = nil, files : [File]? = nil) {
+    init(_ name : String = "") {
         self.name = name
-        self.parent = parent
     }
 }
