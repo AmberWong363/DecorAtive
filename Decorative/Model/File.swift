@@ -8,9 +8,13 @@ import Foundation
 
 class File : ObservableObject, Identifiable {
     @Published var name : String
+    @Published var room : Room
+    @Published var map : Map
     let id = UUID()
     
-    init(_ name : String = "") {
+    init(_ name : String = "", room : Room = Room(), map : Map = Map()) {
         self.name = name
+        self.room = room
+        self.map = map
     }
 }

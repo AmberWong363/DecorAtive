@@ -27,6 +27,7 @@ struct DecorativeApp: App {
     @StateObject var currentRoom : Room = Room()
     @StateObject var root : Root = Root()
     @StateObject var addedFurnitureList : FurnitureList = FurnitureList([])
+    @StateObject var currentFile : File = File()
     var body: some Scene {
         WindowGroup {
             MotherView()
@@ -37,6 +38,7 @@ struct DecorativeApp: App {
                 .environmentObject(root)
                 .environmentObject(addedFurnitureList)
                 .environmentObject(userInfo)
+                .environmentObject(currentFile)
         }
     }
 }

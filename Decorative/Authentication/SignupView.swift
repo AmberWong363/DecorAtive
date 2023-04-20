@@ -10,7 +10,7 @@ import FirebaseAuth
 
 
 struct SignupView: View {
-    @Binding var viewState: ViewState
+    @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
  
     var body: some View {
@@ -29,7 +29,7 @@ struct SignupView: View {
                     Auth.auth().createUser(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
                 if let _ = user {
                 print("success")
-                    viewState = .login
+                    viewState.state = .login
                     } else {
                         print(error?.localizedDescription as Any)
                         }
@@ -38,7 +38,7 @@ struct SignupView: View {
                 Text("Sign Up").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
                                 }.padding(.all)
                 Button {
-                    self.viewState = .authenticate
+                    viewState.state = .authenticate
                 } label: {
                     Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
                 }.padding(.all)

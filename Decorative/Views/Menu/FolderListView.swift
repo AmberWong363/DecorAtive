@@ -52,6 +52,9 @@ struct FolderListView: View {
                     ForEach(root.folder.folders.indices, id: \.self) { index in
                         FolderView(folder: $root.folder.folders[index])
                     }
+                    ForEach(root.folder.files.indices, id: \.self) { index in
+                        FileView(file: $root.folder.files[index])
+                    }
                 }
             }
             

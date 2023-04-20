@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct ForgotPassword: View {
-    @Binding var viewState: ViewState
+    @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
@@ -28,7 +28,7 @@ struct ForgotPassword: View {
                         if let error = error {
                             print(error.localizedDescription)
                         } else {
-                            viewState = .authenticate
+                            viewState.state = .authenticate
                         }
                     }
                 } label: {
@@ -36,7 +36,7 @@ struct ForgotPassword: View {
                 }.padding(.all)
                 
                 Button {
-                    self.viewState = .authenticate
+                    viewState.state = .authenticate
                 } label: {
                     Text("< Back").frame(width: 300, height: 50, alignment: .center).background(Color.white).cornerRadius(20)
                 }.padding(.all)

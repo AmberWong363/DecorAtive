@@ -19,18 +19,18 @@ struct MotherView: View {
             RoomExpansionView()
         } else if viewState.state == .custom && userInfo.loggedIn {
             CustomFurnitureView()
-        } else if viewState.state == .menu && userInfo.loggedIn {
-            MenuView()
         } else if viewState.state == .authenticate {
-            AuthenticationView(viewState: $viewState)
+            AuthenticationView()
         } else if viewState.state == .login && !userInfo.loggedIn  {
-           LoginView(viewState: $viewState)
+           LoginView()
         } else if viewState.state == .signup && !userInfo.loggedIn  {
-            SignupView(viewState: $viewState)
+            SignupView()
         } else if viewState.state == .forgotPassword && !userInfo.loggedIn  {
-            ForgotPassword(viewState: $viewState)
+            ForgotPassword()
         } else if viewState.state == .settings && userInfo.loggedIn {
-            SettingsView(viewState: $viewState)
+            SettingsView()
+        } else {
+            MenuView()
         }
     }
 }

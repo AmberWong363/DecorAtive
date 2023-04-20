@@ -18,7 +18,7 @@ struct HomeView: View {
             
             Rectangle()
                 .frame(width: .infinity, height: .infinity, alignment: .topLeading)
-                .foregroundColor(Color("Grey1"))
+                .foregroundColor(Color("grey1"))
                 .ignoresSafeArea()
             
             HStack{
@@ -37,7 +37,7 @@ struct HomeView: View {
                     
                     Rectangle()
                         .frame(height: 100, alignment: .center)
-                        .foregroundColor(Color("Grey1"))
+                        .foregroundColor(Color("grey1"))
                         .ignoresSafeArea()
                     Rectangle()
                         .frame(height: 80, alignment: .center)
@@ -91,7 +91,8 @@ struct HomeView: View {
                                 }
                                 
                                 Button {
-                                    //
+                                    root.folder.files.append(File())
+                                    root.folder = root.folder
                                 } label: {
                                     HStack{
                                         Image("NewFileIcon")

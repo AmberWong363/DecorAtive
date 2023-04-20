@@ -11,11 +11,13 @@ class Room : ObservableObject {
     @Published var room : [[Tile]]
     @Published var furnitureList : FurnitureList
     @Published var name : String
+    @Published var accessed : Bool
     
-    init(_ room : [[Tile]] = [], furnitureList : FurnitureList = FurnitureList(), name : String = "Untitled Room") {
+    init(_ room : [[Tile]] = [], furnitureList : FurnitureList = FurnitureList(), name : String = "Untitled Room", accessed : Bool = false) {
         self.room = room
         self.furnitureList = furnitureList
         self.name = name
+        self.accessed = accessed
     }
     
     func getWallBorders() {
