@@ -25,63 +25,21 @@ struct SettingsView: View {
 
         NavigationView {
         
-            
-        VStack {
-            
-            Spacer()
+            Form {
+      
+          Spacer()
+        Section(header: Text("Profile")) {
             Button {
                 showSheet.toggle()
             } label: {
                 ZStack {
-                    Circle().foregroundColor(.accentColor).frame(width:220, height: 220, alignment: .center)
-                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width:200, height: 200, alignment: .center).clipShape(Circle())
+                    Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width: 180.0, height: 180.0).position(x: 200, y: 100)
+                    Image(systemName: "camera").resizable().aspectRatio(contentMode: .fill).frame(width: 20, height: 50) .position(x: 290, y: 180)
             }
             }
-          Spacer()
-            Spacer()
-          
-                if editMode {
-                   
-                    TextField("Email", text: $userInfo.userEmail).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-                           .autocapitalization(.words)
-                           .disableAutocorrection(true)
-                    SecureField("Password", text: $userInfo.password).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
-                           .autocapitalization(.words)
-                           .disableAutocorrection(true)
-                    
-                       } else {
-                           HStack {
-                            Text("Email: ")
-                           Text(userInfo.userEmail).font(.system(size: 20))
-                           }
-                           HStack {
-                            Text("Password: ")
-                           Text("********").font(.system(size: 20))
-                           }
-                HStack {
-                    Toggle("", isOn: $userInfo.metric)
-                    if userInfo.metric {
-                    Text("ft")
-                           }
-                        else {
-                        Text("m")
-                           }
-                           }
-                       }
-            
-           
-            
-               
-           
-            Spacer()
-         
-               
     
             
-            
-            
-       
-        }.sheet(isPresented: $showSheet) {
+        .sheet(isPresented: $showSheet) {
             
             guard let uid = Auth.auth().currentUser?.uid else { return }
            
@@ -101,6 +59,45 @@ struct SettingsView: View {
             
         } content: {
             ImagePicker(selectedImage: self.$userInfo.image)
+        }
+            
+        }
+            if editMode {
+            
+                TextField("Email", text: $userInfo.userEmail).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                       .autocapitalization(.words)
+                       .disableAutocorrection(true)
+                SecureField("Password", text: $userInfo.password).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 20))
+                       .autocapitalization(.words)
+                       .disableAutocorrection(true)
+                
+                   } else {
+                       HStack {
+                           Spacer()
+                        Text("Email: ")
+                           Spacer()
+                       Text(userInfo.userEmail).font(.system(size: 20))
+                           Spacer()
+                       }
+                       HStack {
+                           Spacer()
+                        Text("Password: ")
+                           Spacer()
+                       Text("********").font(.system(size: 20))
+                           Spacer()
+                       }
+            HStack {
+                Toggle("", isOn: $userInfo.metric)
+                if userInfo.metric {
+                Text("ft")
+                       }
+                    else {
+                    Text("m")
+                       }
+                       }
+                       Spacer()
+                   }
+                Spacer()
         }
         .navigationTitle(Text("Settings")) .navigationBarTitleDisplayMode(.inline).toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
