@@ -19,7 +19,6 @@ struct FurnitureEditView: View {
                 .foregroundColor(Color.black.opacity(0.8))
                 .cornerRadius(20)
             VStack {
-                Spacer()
                 HStack {
                     Image("Rotate")
                         .resizable()
@@ -33,6 +32,8 @@ struct FurnitureEditView: View {
                         furniture!.facing = .right
                         furniture!.angle = 90
                         
+                        furniture!.image = "\(furniture!.ogImageIcon)90"
+                        
                         subDistance = furniture!.tileWidth
                         furniture!.tileWidth = furniture!.tileHeight
                         furniture!.tileHeight = subDistance
@@ -40,18 +41,25 @@ struct FurnitureEditView: View {
                         furniture!.facing = .left
                         furniture!.angle = 270
                         
+                        furniture!.image = "\(furniture!.ogImageIcon)270"
+                        
                         subDistance = furniture!.tileWidth
                         furniture!.tileWidth = furniture!.tileHeight
                         furniture!.tileHeight = subDistance
                     case .left:
                         furniture!.facing = .up
                         furniture!.angle = 0
+                        
+                        furniture!.image = "\(furniture!.ogImageIcon)"
+                        
                         subDistance = furniture!.tileWidth
                         furniture!.tileWidth = furniture!.tileHeight
                         furniture!.tileHeight = subDistance
                     case .right:
                         furniture!.facing = .down
                         furniture!.angle = 180
+                        
+                        furniture!.image = "\(furniture!.ogImageIcon)180"
                         
                         subDistance = furniture!.tileWidth
                         furniture!.tileWidth = furniture!.tileHeight
@@ -120,7 +128,6 @@ struct FurnitureEditView: View {
                         .background(Color.red)
                         .cornerRadius(20)
                 }
-                Spacer()
             }
             .padding(.vertical)
             .frame(width: 120)

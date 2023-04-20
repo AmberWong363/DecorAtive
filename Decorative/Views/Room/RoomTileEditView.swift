@@ -99,7 +99,7 @@ struct RoomTileEditView: View {
                     zoom -= 1
                 })
                 
-                RoomTileView(zoom: $zoom, tile: $currentTile, roomState: Binding.constant(.restricted))
+                RoomTileView(zoom: $zoom, tile: $currentTile, roomState: Binding.constant(.edit))
                 
             }
             .frame(width: 120)

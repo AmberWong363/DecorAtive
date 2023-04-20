@@ -16,6 +16,8 @@ struct MotherView: View {
             FurnitureSelectionView()
         } else if viewState.state == .room {
             RoomExpansionView()
+        } else if viewState.state == .custom {
+            CustomFurnitureView()
         }
     }
 }

@@ -33,7 +33,7 @@ class Furniture : ObservableObject, Identifiable {
         self.inRoom = inRoom
         self.quantity = quantity
         self.angle = angle
-        self.ogImageIcon = imageIcon
+        self.ogImageIcon = image
     }
     
     static func ==(rhs : Furniture, lhs : Furniture) -> Bool {

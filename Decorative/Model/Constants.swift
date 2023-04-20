@@ -32,7 +32,7 @@ public extension Binding {
 }
 
 enum viewState {
-    case authenticate, signup, login, forgotPassword, settings, map, room, furniture
+    case authenticate, signup, login, forgotPassword, settings, map, room, furniture, custom
 }
 
 enum direction {
@@ -40,7 +40,7 @@ enum direction {
 }
 
 enum roomState {
-    case walls, doors, windows, restricted, furniture, completion, loading
+    case doors, windows, edit
 }
 
 enum wallType {

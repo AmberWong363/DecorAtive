@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomFurnitureView: View {
-    @Binding var addedFurnitureList : FurnitureList
+    @EnvironmentObject var addedFurnitureList : FurnitureList
     @EnvironmentObject var viewState : ViewState
     @State var name : String = ""
     @State var size : (Int, Int) = (0, 0)
@@ -18,6 +18,16 @@ struct CustomFurnitureView: View {
                 .foregroundColor(Color.gray.opacity(0.3))
             
             VStack {
+                HStack {
+                    Text("< Back")
+                        .onTapGesture {
+                            viewState.state = .furniture
+                        }
+                        .padding()
+                        .foregroundColor(Color.accent)
+                    Spacer()
+                }
+                
                 TextField("Custom Furniture Name", text: $name)
                     .padding()
                 
@@ -40,7 +50,7 @@ struct CustomFurnitureView: View {
                     .padding()
                 
                 Button {
-                    addedFurnitureList.list.append(Furniture(name: name, tileWidth: size.0, tileHeight: size.1, image: "custom"))
+                    addedFurnitureList.list.append(Furniture(name: name, tileWidth: size.0, tileHeight: size.1, image: "nightstand"))
                     viewState.state = .furniture
                 } label: {
                     Text("Add Furniture")

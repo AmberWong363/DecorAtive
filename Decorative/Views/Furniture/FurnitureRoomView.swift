@@ -14,11 +14,9 @@ struct FurnitureRoomView: View {
         ZStack {
             Image("\(furniture.image)")
                 .resizable()
-                .rotationEffect(Angle(degrees: Double(furniture.angle)))
                 .frame(
                     width: (CGFloat(zoom*2*furniture.tileWidth)),
                     height: (CGFloat(zoom*2*furniture.tileHeight)))
-                .border(Color.red, width: 5)
         }
     }
 }

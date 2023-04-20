@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RoomExpansionView: View {
     @State var zoom : Int = 20
-    @State var roomState : roomState = .walls
+    @State var roomState : roomState = .edit
     @EnvironmentObject var viewState : ViewState
     @EnvironmentObject var currentRoom : Room
     @State var currentFurniture : Furniture? = nil
@@ -38,6 +38,40 @@ struct RoomExpansionView: View {
                         }
                         Spacer()
                     }
+                }
+                
+                HStack {
+                    // Button for Door modifying
+                    Button {
+                        roomState = .doors
+                    } label: {
+                        Text("Door Mode")
+                            .padding()
+                            .background(Color.blue.opacity(0.8))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                    }
+                    // Button for window modifying
+                    Button {
+                        roomState = .windows
+                    } label: {
+                        Text("Window Mode")
+                            .padding()
+                            .background(Color.red.opacity(0.8))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                    }
+                    // Button for editing
+                    Button {
+                        roomState = .edit
+                    } label: {
+                        Text("Edit Mode")
+                            .padding()
+                            .background(Color.accent.opacity(0.8))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                    }
+
                 }
                 
                 Slider(value: .convert(from: $zoom), in: 10...100, step: 1)

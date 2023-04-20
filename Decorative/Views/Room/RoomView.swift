@@ -26,12 +26,31 @@ struct RoomView: View {
                                     ForEach(currentRoom.room[index].indices, id: \.self) { i in
                                         RoomTileView(zoom: $zoom, tile: $currentRoom.room[index][i], roomState: $roomState)
                                             .onTapGesture {
-                                                if (index, i) != lastClicked {
-                                                    currentFurniture = nil
-                                                    currentTile = currentRoom.room[index][i]
-                                                    lastClicked = (index, i)
+                                                if roomState == .doors {
+                                                    for k in 0..<currentRoom.room[index][i].wallType.count {
+                                                        if currentRoom.room[index][i].wallType[k] == .wall || currentRoom.room[index][i].wallType[k] == .window {
+                                                            currentRoom.room[index][i].wallType[k] = .door
+                                                        }
+                                                    }
+                                                    roomState = .windows
+                                                    roomState = .doors
+                                                } else if roomState == .windows {
+                                                    for k in 0..<currentRoom.room[index][i].wallType.count {
+                                                        if currentRoom.room[index][i].wallType[k] == .wall || currentRoom.room[index][i].wallType[k] == .door {
+                                                            currentRoom.room[index][i].wallType[k] = .window
+                                                        }
+                                                    }
+                                                    roomState = .doors
+                                                    roomState = .windows
                                                 } else {
-                                                    currentTile = Tile(value: -1)
+                                                    if (index, i) != lastClicked {
+                                                        currentFurniture = nil
+                                                        currentTile = currentRoom.room[index][i]
+                                                        lastClicked = (index, i)
+                                                    } else {
+                                                        currentTile = Tile(value: -1)
+                                                        lastClicked = (-1, -1)
+                                                    }
                                                 }
                                             }
                                     }
@@ -51,11 +70,13 @@ struct RoomView: View {
                                                             CGFloat(zoom*2 * currentRoom.furnitureList.list[index].position.1)
                                                 )
                                                 .onTapGesture {
-                                                    if currentFurniture == nil || !(currentFurniture! == currentRoom.furnitureList.list[index]) {
-                                                        currentTile = Tile(value: -1)
-                                                        currentFurniture = currentRoom.furnitureList.list[index]
-                                                    } else {
-                                                        currentFurniture = nil
+                                                    if roomState == .edit {
+                                                        if currentFurniture == nil || !(currentFurniture! == currentRoom.furnitureList.list[index]) {
+                                                            currentTile = Tile(value: -1)
+                                                            currentFurniture = currentRoom.furnitureList.list[index]
+                                                        } else {
+                                                            currentFurniture = nil
+                                                        }
                                                     }
                                                 }
                                             Spacer()

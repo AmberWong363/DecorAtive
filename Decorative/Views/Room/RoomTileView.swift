@@ -13,20 +13,12 @@ struct RoomTileView: View {
     @Binding var roomState : roomState
     var color : Color {
         switch roomState {
-        case .walls:
-            return tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
         case .doors:
             return tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
         case .windows:
             return tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
-        case .restricted:
+        case .edit:
             return tile.restricted ? Color.red.opacity(0.3) : tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
-        case .furniture:
-            return tile.restricted ? Color.red.opacity(0.3) : tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
-        case .completion:
-            return tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
-        case .loading:
-            return tile.selected ? Color.green.opacity(0.3) : Color.gray.opacity(0.3)
         }
     }
     var body: some View {

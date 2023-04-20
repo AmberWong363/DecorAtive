@@ -14,6 +14,7 @@ struct DecorativeApp: App {
     @StateObject var viewState : ViewState = ViewState()
     @StateObject var currentRoom : Room = Room()
     @StateObject var root : Root = Root()
+    @StateObject var addedFurnitureList : FurnitureList = FurnitureList([])
     var body: some Scene {
         WindowGroup {
             MotherView()
@@ -22,6 +23,7 @@ struct DecorativeApp: App {
                 .environmentObject(viewState)
                 .environmentObject(currentRoom)
                 .environmentObject(root)
+                .environmentObject(addedFurnitureList)
         }
     }
 }
