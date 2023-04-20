@@ -57,7 +57,8 @@ struct MenuView: View {
                     TabView {
                         
                         
-                    HomeView() .tabItem {
+                        HomeView() .tabItem {
+
                             Image(systemName: "house")
                             Text("Home")
                         }

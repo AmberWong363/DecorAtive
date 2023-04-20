@@ -9,26 +9,53 @@ import SwiftUI
 struct FolderListView: View {
     @EnvironmentObject var root : Root
     var body: some View {
-        VStack {
-            Button {
-                if !root.previous.isEmpty {
-                    root.folder = root.previous.last!
-                    root.previous.removeLast()
+        VStack(spacing: 0) {
+            
+            ZStack{
+                
+                
+                
+                HStack{
+                    
+                    Button {
+                        if !root.previous.isEmpty {
+                            root.folder = root.previous.last!
+                            root.previous.removeLast()
+                        }
+                    } label: {
+                        ZStack{
+                            
+                            Rectangle()
+                                .frame(width: 65, height: 32, alignment: .leading)
+                                .cornerRadius(6)
+                                .foregroundColor(Color.gray)
+                                .ignoresSafeArea()
+                               
+                                
+                            
+                            Text(" <-Back")
+                                .foregroundColor(Color.black)
+                                .cornerRadius(5)
+                        }
+                        
+                    }
+                    
+                    Spacer()
                 }
-            } label: {
-                Text("Back")
+                
+               
+                
             }
+            
             ScrollView {
                 VStack(spacing: 0) {
                     ForEach(root.folder.folders.indices, id: \.self) { index in
                         FolderView(folder: $root.folder.folders[index])
-                            .onLongPressGesture {
-                                root.previous.append(root.folder)
-                                root.folder = root.folder.folders[index]
-                            }
                     }
                 }
             }
+            
+            Spacer()
         }
     }
 }
