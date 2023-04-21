@@ -33,26 +33,24 @@ struct RoomExpansionView: View {
                             currentFile.room.accessed = true
                         }
                         .onTapGesture {
-//                            currentFile.map = map
-//                            currentFile.room = currentRoom
-                            
                             for i in 0..<root.folder.files.count {
                                 if root.folder.files[i].id == root.savedID {
                                     print("Saved!")
-                                    root.folder.files[i].room = currentFile.room
+                                    root.folder.files[i].room.room = currentRoom.room
+                                    root.folder.files[i].room.furnitureList = currentRoom.furnitureList
                                     root.folder.files[i].name = currentFile.name
                                     root.folder.files[i].map = currentFile.map
+                                    
+                                    map.room = []
+                                    map.name = Map().name
+                                    map.array = Map().array
+                                    user.selectedSpecialTile = nil
+                                    user.selectedTile = nil
+                                    currentRoom.room = Room().room
+                                    currentRoom.name = Room().name
+                                    currentRoom.furnitureList = FurnitureList()
                                 }
                             }
-                            
-                            map.room = []
-                            map.name = ""
-                            map.array = []
-                            user.selectedSpecialTile = nil
-                            user.selectedTile = nil
-                            currentRoom.room = []
-                            currentRoom.name = ""
-                            currentRoom.furnitureList = FurnitureList()
                             
                             currentFile.room = File().room
                             currentFile.name = File().name

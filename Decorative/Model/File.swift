@@ -12,7 +12,7 @@ class File : ObservableObject, Identifiable {
     @Published var map : Map
     let id = UUID()
     
-    init(_ name : String = "", room : Room = Room(), map : Map = Map()) {
+    init(_ name : String = "New File", room : Room = Room(), map : Map = Map()) {
         self.name = name
         self.room = room
         self.map = map
