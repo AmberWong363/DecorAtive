@@ -19,27 +19,25 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct DecorativeApp: App {
-
-//    @StateObject var folderList : [File] = [Folder(), Folder(), File()]
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var userInfo : UserInfo = UserInfo()
-//    @StateObject var folder: Folder = Folder("p1", parent: nil, files: [Folder(), File(), File()])
-    @StateObject var root: Root = Root()
-
-    
+    @StateObject var map : Map = Map()
+    @StateObject var user : User = User()
+    @StateObject var viewState : ViewState = ViewState()
+    @StateObject var currentRoom : Room = Room()
+    @StateObject var root : Root = Root()
+    @StateObject var addedFurnitureList : FurnitureList = FurnitureList([])
     var body: some Scene {
         WindowGroup {
-            
-
-            MenuView()
+            MotherView()
+                .environmentObject(map)
+                .environmentObject(user)
+                .environmentObject(viewState)
+                .environmentObject(currentRoom)
+                .environmentObject(root)
+                .environmentObject(addedFurnitureList)
                 .environmentObject(root)
                 .environmentObject(userInfo)
-
-            
-//            MenuView()
-//                .environmentObject(FolderList())
-//                .environmentObject(userInfo)
         }
     }
 }

@@ -2,9 +2,6 @@
 //  Root.swift
 //  Decorative
 //
-//  Created by Reuben Gottesman (student LM) on 3/31/23.
-//
-
 import Foundation
 class Root : ObservableObject {
     @Published var rootFolder : Folder
