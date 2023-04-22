@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2031BCAF29F4553C00B409CA /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031BCAE29F4553C00B409CA /* Root.swift */; };
 		A3026B2929D4B238009F4FCC /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2829D4B238009F4FCC /* ViewState.swift */; };
 		A3026B2B29D4B35E009F4FCC /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2A29D4B35E009F4FCC /* MotherView.swift */; };
 		A3026B2D29D4B8A9009F4FCC /* Furniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3026B2C29D4B8A9009F4FCC /* Furniture.swift */; };
@@ -15,7 +16,6 @@
 		A3290F5529F1DC8C00F4998A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F4F29F1DC8B00F4998A /* Login.swift */; };
 		A3290F5629F1DC8C00F4998A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5029F1DC8C00F4998A /* ImagePicker.swift */; };
 		A3290F5729F1DC8C00F4998A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5129F1DC8C00F4998A /* ForgotPassword.swift */; };
-		A3290F5929F1DC8C00F4998A /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5329F1DC8C00F4998A /* Root.swift */; };
 		A3290F6029F1DCE200F4998A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5D29F1DCE100F4998A /* SignupView.swift */; };
 		A3290F6129F1DCE200F4998A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5E29F1DCE100F4998A /* LoginView.swift */; };
 		A3290F6229F1DCE200F4998A /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3290F5F29F1DCE200F4998A /* AuthenticationView.swift */; };
@@ -71,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2031BCAE29F4553C00B409CA /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		338EA22CE1CB772E1C9631E6 /* Pods_Decorative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decorative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3026B2829D4B238009F4FCC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		A3026B2A29D4B35E009F4FCC /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		A3290F4F29F1DC8B00F4998A /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A3290F5029F1DC8C00F4998A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A3290F5129F1DC8C00F4998A /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
-		A3290F5329F1DC8C00F4998A /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Root.swift; path = "../../../../../Downloads/DecorAtive-Reuben2/Decorative/Model/Root.swift"; sourceTree = "<group>"; };
 		A3290F5D29F1DCE100F4998A /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		A3290F5E29F1DCE100F4998A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A3290F5F29F1DCE200F4998A /* AuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				A3290F5029F1DC8C00F4998A /* ImagePicker.swift */,
-				A3290F5329F1DC8C00F4998A /* Root.swift */,
 				A3290F4E29F1DC8B00F4998A /* UserInfo.swift */,
 				A3E8C7AE29AE87AA00BFDF8E /* File.swift */,
 				A3E8C7AC29AE87A900BFDF8E /* Folder.swift */,
@@ -286,6 +285,7 @@
 				A3026B2C29D4B8A9009F4FCC /* Furniture.swift */,
 				A3ED95A129D6F8E900D21001 /* FurnitureList.swift */,
 				A3ED959F29D5F80000D21001 /* Room.swift */,
+				2031BCAE29F4553C00B409CA /* Root.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,7 +296,6 @@
 				DDB53D1D660185E5E6DE2E05 /* Pods-Decorative.debug.xcconfig */,
 				DC04E75DA4B9BDBABD6F675C /* Pods-Decorative.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -484,6 +483,7 @@
 				A3E4C08D29DDDC9A007399F4 /* RoomView.swift in Sources */,
 				A3ED95A029D5F80000D21001 /* Room.swift in Sources */,
 				A3290F6129F1DCE200F4998A /* LoginView.swift in Sources */,
+				2031BCAF29F4553C00B409CA /* Root.swift in Sources */,
 				A3E4C09329E0A3BF007399F4 /* FurnitureBarView.swift in Sources */,
 				A393455C29B10FDF004D66D4 /* TileView.swift in Sources */,
 				A3026B2F29D4B9AC009F4FCC /* FurnitureSideView.swift in Sources */,
@@ -495,7 +495,6 @@
 				A3290F5429F1DC8C00F4998A /* UserInfo.swift in Sources */,
 				A3E8C7A729AE6EA500BFDF8E /* Map.swift in Sources */,
 				A3290F6F29F1DD1E00F4998A /* SettingsView.swift in Sources */,
-				A3290F5929F1DC8C00F4998A /* Root.swift in Sources */,
 				A3E4C09E29E0E4E9007399F4 /* RoomExpansionView.swift in Sources */,
 				A3026B2D29D4B8A9009F4FCC /* Furniture.swift in Sources */,
 				A3E8C77A29AD2FCC00BFDF8E /* DecorativeApp.swift in Sources */,
