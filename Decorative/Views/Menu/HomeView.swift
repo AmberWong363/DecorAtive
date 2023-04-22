@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var root : Root
     @State var name : String = "Decor-Ative"
     
@@ -62,6 +62,19 @@ struct HomeView: View {
                                 .foregroundColor(Color.black)
                             
                             Spacer()
+                            
+                            VStack{
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .frame(width: 35, height: 35)
+                                    .onTapGesture {
+                                        viewState.state = .settings
+                                    }
+                                
+                                Text("Settings")
+                            }
+                            
+                            Spacer()
                         }
                         
                     }
@@ -83,9 +96,6 @@ struct HomeView: View {
                                     root.folder = root.folder
                                 } label: {
                                     HStack{
-                                        Image("NewFolderIcon")
-                                            .resizable()
-                                        
                                         Text("New Folder +")
                                     }
                                 }
@@ -95,9 +105,6 @@ struct HomeView: View {
                                     root.folder = root.folder
                                 } label: {
                                     HStack{
-                                        Image("NewFileIcon")
-                                            .resizable()
-                                        
                                         Text("New Room File +")
                                     }
                                 }

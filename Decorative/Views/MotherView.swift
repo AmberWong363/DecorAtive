@@ -30,7 +30,7 @@ struct MotherView: View {
         } else if viewState.state == .settings && userInfo.loggedIn {
             SettingsView()
         } else {
-            MenuView()
+            HomeView()
         }
     }
 }

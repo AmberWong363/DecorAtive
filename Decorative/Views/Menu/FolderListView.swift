@@ -17,27 +17,29 @@ struct FolderListView: View {
                 
                 HStack{
                     
-                    Button {
-                        if !root.previous.isEmpty {
-                            root.folder = root.previous.last!
-                            root.previous.removeLast()
-                        }
-                    } label: {
-                        ZStack{
-                            
-                            Rectangle()
-                                .frame(width: 65, height: 32, alignment: .leading)
-                                .cornerRadius(6)
-                                .foregroundColor(Color.gray)
-                                .ignoresSafeArea()
-                               
+                    if !root.previous.isEmpty {
+                        Button {
+                            if !root.previous.isEmpty {
+                                root.folder = root.previous.last!
+                                root.previous.removeLast()
+                            }
+                        } label: {
+                            ZStack{
                                 
+                                Rectangle()
+                                    .frame(width: 65, height: 32, alignment: .leading)
+                                    .cornerRadius(6)
+                                    .foregroundColor(Color.gray)
+                                    .ignoresSafeArea()
+                                
+                                
+                                
+                                Text(" <-Back")
+                                    .foregroundColor(Color.black)
+                                    .cornerRadius(5)
+                            }
                             
-                            Text(" <-Back")
-                                .foregroundColor(Color.black)
-                                .cornerRadius(5)
                         }
-                        
                     }
                     
                     Spacer()
