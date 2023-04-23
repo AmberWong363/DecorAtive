@@ -8,7 +8,7 @@ class Root : ObservableObject {
     @Published var previous : [Folder]
     @Published var savedID : UUID = UUID()
     
-    init(_ folder : Folder = Folder("root", files: [], folders: [Folder("foot", files: [], folders: [Folder(), Folder(), Folder()]), Folder(), Folder()]), rootFolder : Folder = Folder(), previous : [Folder] = [] ) {
+    init(_ folder : Folder = Folder("root", files: [], folders: [Folder("2nd Floor", files: [], folders: [Folder(), Folder(), Folder()]), Folder(), Folder()]), rootFolder : Folder = Folder(), previous : [Folder] = [] ) {
         self.folder = folder
         self.rootFolder = rootFolder
         self.previous = previous

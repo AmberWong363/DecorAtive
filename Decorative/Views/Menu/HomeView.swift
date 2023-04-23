@@ -16,6 +16,7 @@ struct HomeView: View {
         
         ZStack{
             
+            // background
             Rectangle()
                 .frame(width: .infinity, height: .infinity, alignment: .topLeading)
                 .foregroundColor(Color("grey1"))
@@ -50,6 +51,7 @@ struct HomeView: View {
                             
                             Spacer()
                             
+                            // app logo and name
                             Image("Logo5")
                                 .resizable()
                                 .frame(width: 60, height: 60, alignment: .top)
@@ -63,6 +65,7 @@ struct HomeView: View {
                             
                             Spacer()
                             
+                            // navigate to settingsView
                             VStack{
                                 Image(systemName: "gearshape")
                                     .resizable()
@@ -88,6 +91,7 @@ struct HomeView: View {
                             .foregroundColor(Color("green1"))
                             .ignoresSafeArea()
                         
+                        // Botton for creating a new File or Folder
                         VStack{
                             Menu{
                                 
