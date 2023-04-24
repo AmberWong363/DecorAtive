@@ -17,17 +17,19 @@ struct SignupView: View {
       
             VStack {
                 Spacer()
-                Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
+                Image("Icon-1").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
                 Spacer()
                
-                
+                // TextField and SecureField for email and password input
                 TextField("Email Address" , text: $userInfo.userEmail).padding(.all).disableAutocorrection(true).autocapitalization(.none)
                 
                 SecureField("Password" , text: $userInfo.password).padding(.all).disableAutocorrection(true).autocapitalization(.none)
-                
+                // if the login is successful, the viewState.state property is updated to .menu
+               // calls the createUser method of Firebase Authentication
                 Button {
                     Auth.auth().createUser(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
-                if let _ = user {
+                //  If successful, the viewState.state property is updated to .login
+                        if let _ = user {
                 print("success")
                     viewState.state = .login
                     } else {

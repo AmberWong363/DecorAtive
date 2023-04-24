@@ -23,17 +23,18 @@ struct LoginView: View {
             Text("Decor-ative")
                 .font(.largeTitle).foregroundColor(Color.white)
                 .padding([.top, .bottom], 40)
-            Image("Icon").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
+            Image("Icon-1").resizable().aspectRatio(contentMode: .fit).clipShape(Circle()).frame(width: 300, height: 300, alignment: .center)
             Spacer()
             
+            //allow the user to input their email and password
             TextField("Email Address:" , text: $userInfo.userEmail) .padding()
                 .cornerRadius(20.0).disableAutocorrection(true).autocapitalization(.none)
             
             SecureField("Password" , text: $userInfo.password) .padding()
                 .cornerRadius(20.0).disableAutocorrection(true).autocapitalization(.none)
             
-            
-            
+            // If the login is successful, the viewState.state property is updated to .menu
+            // If the login fails, the view displays an alert with the message "Incorrect Password" and a "Try Again" button.
             Button {
                 Auth.auth().signIn(withEmail: userInfo.userEmail, password: userInfo.password) { user, error in
                     if let _ = user{
@@ -45,7 +46,7 @@ struct LoginView: View {
                     }
                     
                 }
-                
+          
             } label: {
                 Text("Login")  .font(.headline)
                     .foregroundColor(.white)

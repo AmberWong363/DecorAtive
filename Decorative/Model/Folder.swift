@@ -6,7 +6,7 @@
 
 import Foundation
 
-class Folder : ObservableObject, Identifiable {
+class Folder : NSObject, ObservableObject, Identifiable, NSCoding {
     @Published var folders : [Folder]
     @Published var files : [File]
     @Published var name : String
@@ -16,5 +16,21 @@ class Folder : ObservableObject, Identifiable {
         self.folders = folders
         self.name = name
         self.files = files
+    }
+    func encode(with coder: NSCoder) {
+            coder.encode(name, forKey: "name")
+            coder.encode(files, forKey: "files")
+            coder.encode(folders, forKey: "folders")
+        }
+    
+    required init?(coder: NSCoder) {
+            guard let name = coder.decodeObject(forKey: "name") as? String,
+                  let files = coder.decodeObject(forKey: "files") as? [File],
+                let folders = coder.decodeObject(forKey: "folders") as? [Folder] else {
+                return nil
+            }
+        self.name = name
+        self.files = files
+        self.folders = folders
     }
 }
