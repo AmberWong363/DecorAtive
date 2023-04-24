@@ -28,7 +28,7 @@ struct FolderView: View {
                 .cornerRadius(8)
             
             HStack(){
-                
+                // folder Icon - navigate to folder
                 Image("folder")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -38,7 +38,7 @@ struct FolderView: View {
                         root.previous.append(root.folder)
                         root.folder = folder
                     }
-                
+                // Folder Name
                 if rename == false {
                     Text("\(folder.name)")
                         .font(Font.title2)
@@ -54,8 +54,9 @@ struct FolderView: View {
                 }
                  
                 Spacer()
-            
                 
+                // Drop Down Actions Menu
+
                 Menu {
                      
                     Button {

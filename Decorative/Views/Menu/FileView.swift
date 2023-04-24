@@ -24,6 +24,8 @@ struct FileView: View {
                 .foregroundColor(Color.accentColor)
                 .cornerRadius(8)
             
+            
+            // File Icon - navigate to file
             HStack {
                 Image("file")
                     .resizable()
@@ -50,6 +52,7 @@ struct FileView: View {
                         
                     }
                 
+                // File Name
                 if rename == false {
                     Text("\(file.name)")
                         .font(Font.title2)
@@ -66,6 +69,8 @@ struct FileView: View {
                 }
                 
                 Spacer()
+                
+                // Drop Down Actions Menu
                 Menu {
                     Button {
                         rename.toggle()
@@ -85,7 +90,8 @@ struct FileView: View {
                         Text("Share")
                     }
                     Button {
-                        MakeACopy()
+                        root.folder.files.append(File("\(file.name) (1)", room: file.room, map: file.map))
+                        root.folder = root.folder
                     } label: {
                         Text("Make a Copy")
                     }
