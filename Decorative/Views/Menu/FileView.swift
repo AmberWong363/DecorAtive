@@ -88,7 +88,7 @@ struct FileView: View {
                         Text("Share")
                     }
                     Button {
-                        root.folder.files.append(File("Copy Of \(file.name)", room: file.room, map: file.map))
+                        root.folder.files.append(File("\(file.name) (1)", room: file.room, map: file.map))
                         root.folder = root.folder
                     } label: {
                         Text("Make a Copy")
