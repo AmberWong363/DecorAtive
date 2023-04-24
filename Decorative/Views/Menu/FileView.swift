@@ -79,11 +79,6 @@ struct FileView: View {
                     }
                     
                     Button {
-                        MoveTo()
-                    } label: {
-                        Text("Move To ->")
-                    }
-                    Button {
                         let activityViewController = share(object: root.folder)
                         UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
                     } label: {
@@ -106,19 +101,14 @@ struct FileView: View {
         }
     }
     
-    
-    func MoveTo() {
-        //
-    }
+  
     func share(object: Folder) -> UIActivityViewController {
         let shareText = "Check out this object: \(object.name)"
         let shareImage = UIImage(named: "objectImage")
         let activityViewController = UIActivityViewController(activityItems: [shareText, shareImage], applicationActivities: nil)
         return activityViewController
     }
-    func MakeACopy() {
-        //
-    }
+   
     
 }
 

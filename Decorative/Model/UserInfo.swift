@@ -11,7 +11,7 @@ import FirebaseAuth
 class UserInfo: ObservableObject {
     @Published var userEmail: String
     @Published var password: String
-    @Published var image: UIImage = UIImage(named: "default")!
+    @Published var image: UIImage = UIImage(named: "Icon-1")!
     @Published var loggedIn: Bool = false
     @Published var metric: Bool = false
     

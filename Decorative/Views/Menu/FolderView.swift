@@ -64,11 +64,6 @@ struct FolderView: View {
                     } label: {
                         Text("Rename")
                     }
-                    Button {
-                        MoveTo()
-                    } label: {
-                        Text("Move To ->")
-                    }
                    
                    Button("Share") {
                        let activityViewController = share(object: root.folder)
@@ -95,9 +90,6 @@ struct FolderView: View {
         
     }
     
-    func MoveTo() {
-        //
-    }
     func MakeACopy() {
         root.folder.folders.append(Folder("Copy Of \(folder.name)", files: folder.files, folders: folder.folders))
         root.folder = root.folder
