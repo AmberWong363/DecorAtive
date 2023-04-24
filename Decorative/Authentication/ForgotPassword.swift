@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct ForgotPassword: View {
+    // retrieves the userEmail property from the userInfo object
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var userInfo: UserInfo
     
@@ -19,14 +20,16 @@ struct ForgotPassword: View {
                 Spacer()
                 Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
                 Spacer()
-                    
+                 // retrieves users email
                 TextField("Email Address:" , text: $userInfo.userEmail).padding(.all)
                 
-               
+                //sends the password reset request
                 Button {
+                    // calls Auth.auth().sendPasswordReset() which sends the request
                     Auth.auth().sendPasswordReset(withEmail: userInfo.userEmail) { error in
                         if let error = error {
                             print(error.localizedDescription)
+                            //  If the password reset request is successful, the view state is set to .authenticate to go back to the authentication view
                         } else {
                             viewState.state = .authenticate
                         }

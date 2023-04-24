@@ -47,12 +47,4 @@ struct MenuView: View {
 }
 
 
-//    struct MenuView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            MenuView()     .environmentObject(FolderList()).environmentObject(UserInfo())
-//        }
-//    }
 
-
-//TextField("Name this folder", text: $rename)
-//currentFolder.files.append(File(rename, parent: currentFolder))

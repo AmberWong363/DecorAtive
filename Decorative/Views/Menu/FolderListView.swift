@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+
 struct FolderListView: View {
     @EnvironmentObject var root : Root
+    
     var body: some View {
         VStack(spacing: 0) {
             

@@ -21,9 +21,9 @@ struct SettingsView: View {
     
     
     var body: some View {
-        
+
         VStack(spacing: 0) {
-            
+            //create header
             ZStack{
                 
                 Rectangle()
@@ -41,14 +41,14 @@ struct SettingsView: View {
                     HStack{
                         
                         Spacer()
-                        
+                        //displays logo at the top
                         Image("Logo5")
                             .resizable()
-                            .frame(width: 60, height: 60, alignment: .top)
+                            .frame(width: 60, height: 60, alignment: .center)
                             .ignoresSafeArea()
                         
                         Spacer()
-                        
+                        //displays app name at the top
                         Text("Decor-Ative")
                             .font(Font.largeTitle)
                             .foregroundColor(Color.black)
@@ -56,7 +56,7 @@ struct SettingsView: View {
                         Spacer()
                         
                         VStack{
-                            
+                            //displays home button at the top
                             Image(systemName: "house")
                                 .resizable()
                                 .frame(width: 35, height: 35)
@@ -74,48 +74,50 @@ struct SettingsView: View {
                     
                 }
             }
-            
+            //creates a form that allows the user to edit their profile
             NavigationView {
                 
                 Form {
                     
-                    Spacer()
+              //user can upload a profile picture by tapping on a button that presents a sheet containing an ImagePicker view
                     Section(header: Text("Profile")) {
                         Button {
                             showSheet.toggle()
                         } label: {
                             ZStack {
-                                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width: 180.0, height: 180.0).position(x: 200, y: 100)
-                                Image(systemName: "camera").resizable().aspectRatio(contentMode: .fill).frame(width: 20, height: 50) .position(x: 290, y: 180)
+                                Image(uiImage: userInfo.image).resizable().aspectRatio(contentMode: .fill).frame(width: 300.0, height: 300.0, alignment: .center)
+                                Image(systemName: "camera").resizable().aspectRatio(contentMode: .fill).frame(width: 20, height: 50).position(x: 280, y: 280)
                             }
                         }
                         
                         
                         .sheet(isPresented: $showSheet) {
-                            
+                            //retrieves user id of authenticated user
                             guard let uid = Auth.auth().currentUser?.uid else { return }
                             
                             
-                            
+                            //creates a reference to a Firebase Storage path that corresponds to the user's profile image
                             let storage = Storage.storage().reference().child("users/\(uid)")
-                            
+                            //converts the user's new profile image to JPEG data
                             guard let imagedata = userInfo.image.jpegData(compressionQuality: 0.5) else { return }
-                            
+                            //saves it to Firebase Storage using the putData method
                             storage.putData(imagedata) { meta, error in
                                 
                             }
                             
-                            
+                            //updates password
                             login.updatePassword(password:  userInfo.password)
                             
                             
                         } content: {
+                            //changes image to the one picked
                             ImagePicker(selectedImage: self.$userInfo.image)
                         }
                         
                     }
+                    //if true the view shows text fields for the email and password fields
                     if editMode {
-                        
+                        //editable email and password
                         TextField("Email", text: $userInfo.userEmail)
                             .font(Font.body)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -124,8 +126,10 @@ struct SettingsView: View {
                         SecureField("Password", text: $userInfo.password).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(Font.body)
                             .autocapitalization(.words)
                             .disableAutocorrection(true)
+                    //if false the view shows static text fields for the email and password fields
                         
                     } else {
+                        //static email and password
                         HStack {
                             
                             Text("Email: ")
@@ -140,22 +144,16 @@ struct SettingsView: View {
                             Text("********").font(Font.title2)
                             Spacer()
                         }
-                        //                    HStack {
-                        //                        Toggle("", isOn: $userInfo.metric)
-                        //                        if userInfo.metric {
-                        //                            Text("ft")
-                        //                        }
-                        //                        else {
-                        //                            Text("m")
-                        //                        }
-                        //                    }
-                        //                    Spacer()
+                    
                     }
                     Spacer()
-                }.foregroundColor(Color("grey1"))
+                }
+                //sets the background color to grey and the preferred color scheme to light
+                .foregroundColor(Color("grey1"))
                 .navigationTitle(Text("Settings")) .navigationBarTitleDisplayMode(.inline).toolbar {
+                    //tool bar at top of settingsview
                     ToolbarItem(placement: .navigation) {
-                        //                EditButton()
+                        //toggles editMode
                         Button(action: {
                             self.editMode.toggle()
                         }) {
@@ -165,6 +163,7 @@ struct SettingsView: View {
                         
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
+                        //logs user out
                         Button {
                             try! Auth.auth().signOut()
                             viewState.state = .authenticate
@@ -178,6 +177,7 @@ struct SettingsView: View {
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.light/*@END_MENU_TOKEN@*/)
             }
             
+        
         }
     }
 }

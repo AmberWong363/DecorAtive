@@ -10,6 +10,8 @@ import SwiftUI
 struct MotherView: View {
     @EnvironmentObject var viewState : ViewState
     @EnvironmentObject var userInfo : UserInfo
+   
+    
     var body: some View {
         if viewState.state == .map && userInfo.loggedIn {
             MapExpansionView()
@@ -29,7 +31,9 @@ struct MotherView: View {
             ForgotPassword()
         } else if viewState.state == .settings && userInfo.loggedIn {
             SettingsView()
-        } else {
+        }
+  
+     else {
             HomeView()
         }
     }

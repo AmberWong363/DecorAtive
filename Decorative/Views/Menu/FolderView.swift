@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import UIKit
+import MessageUI
 
+    
 struct FolderView: View {
     @State var rename: Bool = false
     @Binding var folder: Folder
     @EnvironmentObject var root : Root
+    @EnvironmentObject var viewState: ViewState
+    @State private var isShowingShareSheet = false
+    
     
     var body: some View {
         
@@ -46,12 +52,11 @@ struct FolderView: View {
                         }
                         
                 }
-                    
+                 
                 Spacer()
                 
-                
-                
                 // Drop Down Actions Menu
+
                 Menu {
                      
                     Button {
@@ -59,25 +64,24 @@ struct FolderView: View {
                     } label: {
                         Text("Rename")
                     }
-                    
                     Button {
                         MoveTo()
                     } label: {
                         Text("Move To ->")
                     }
-                    Button {
-                        Share()
-                    } label: {
-                        Text("Share")
-                    }
+                   
+                   Button("Share") {
+                       let activityViewController = share(object: root.folder)
+                       UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+                       
+                   }
                     Button {
                         MakeACopy()
                     } label: {
                         Text("Make a Copy")
                     }
-                    
-
-                } label: {
+                }
+                label: {
                     Image("options")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -85,21 +89,30 @@ struct FolderView: View {
                         .frame(width: 60, height: 60, alignment: .trailing)
                 }
                 
-                
             }
+            
         }
+        
     }
-    
     
     func MoveTo() {
-        //
-    }
-    func Share() {
         //
     }
     func MakeACopy() {
         root.folder.folders.append(Folder("Copy Of \(folder.name)", files: folder.files, folders: folder.folders))
         root.folder = root.folder
     }
-}
+    func share(object: Folder) -> UIActivityViewController {
+        let shareText = "Check out this object: \(object.name)"
+        let shareImage = UIImage(named: "objectImage")
+        let activityViewController = UIActivityViewController(activityItems: [shareText, shareImage], applicationActivities: nil)
+        return activityViewController
+    }
 
+    
+    }
+
+    
+  
+
+    
